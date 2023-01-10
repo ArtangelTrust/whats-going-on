@@ -11,7 +11,7 @@ export default function BaseLayout({ children }) {
         <title>What's Going On?</title>
         <meta
           name="description"
-          content="What's Going On?"
+          content="What&apos;s Going On?"
         />
         <link rel="icon" href="/favicon.ico" />
       </Head>
