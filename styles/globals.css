@@ -1,0 +1,37 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+  font-family: "Fold Grotesque";
+  src: url("/fonts/fold-grotesque-regular-pro.otf");
+  font-weight: normal;
+}
+
+@font-face {
+  font-family: "Fold Grotesque";
+  src: url("/fonts/fold-grotesque-italic-pro.otf");
+  font-style: italic;
+}
+
+@font-face {
+  font-family: "Fold Grotesque";
+  src: url("/fonts/fold-grotesque-medium-pro.otf");
+  font-weight: bold;
+}
+
+@font-face {
+  font-family: "EH Normal";
+  src: url("/fonts/EHNormal-Medium.otf");
+}
+
+@layer utilities {
+.rtl {
+  direction: rtl;
+}
+
+.active-link {
+  @apply text-gray-sho !important;
+}
+
+}

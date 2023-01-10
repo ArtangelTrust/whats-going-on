@@ -1,0 +1,15 @@
+.text-block {
+  @apply prose w-screen;
+}
+
+.scroll-container {
+  @apply flex space-x-10 px-12 py-2;
+}
+
+.testimonial {
+  @apply shadow-flat shadow-yellow prose prose-xl py-5 px-10 min-w-[600px];
+}
+
+.testimonial span {
+  @apply text-base;
+}

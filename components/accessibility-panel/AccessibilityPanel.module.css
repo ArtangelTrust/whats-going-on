@@ -1,0 +1,19 @@
+.base {
+  @apply border-y border-dark-grey sticky bottom-0 px-12 py-4 flex space-x-2 justify-end bg-white;
+}
+
+.base button {
+  @apply border border-dark-grey w-6 h-6 rounded-full;
+}
+
+.default {
+  @apply bg-white shadow-flat shadow-yellow;
+}
+
+.greyscale {
+  @apply bg-light-grey;
+}
+
+.invert {
+  @apply bg-black;
+}

@@ -1,0 +1,15 @@
+.gallery-block {
+  @apply px-12 w-full md:w-4/5;
+}
+
+.gallery {
+  @apply grid grid-flow-col grid-cols-2 w-full gap-12;
+}
+
+.gallery figure {
+  @apply space-y-4;
+}
+
+.gallery-block figure h2 {
+  @apply text-3xl leading-tight mb-4;
+}

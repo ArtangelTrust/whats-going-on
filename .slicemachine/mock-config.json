@@ -1,0 +1,55 @@
+{
+  "_cts": {
+    "home": {},
+    "page": {},
+    "section": {}
+  },
+  "slices": {
+    "TextBlock": {
+      "default": {
+        "primary": {
+          "text": {
+            "config": {
+              "patternType": "PARAGRAPH",
+              "blocks": 1
+            }
+          }
+        }
+      }
+    },
+    "TestimonialBlock": {
+      "default": {
+        "primary": {},
+        "items": {
+          "text": {
+            "config": {
+              "patternType": "PARAGRAPH",
+              "blocks": 1
+            }
+          }
+        }
+      }
+    },
+    "Gallery": {},
+    "GalleryBlock": {
+      "default": {
+        "primary": {},
+        "items": {
+          "description": {
+            "config": {
+              "patternType": "PARAGRAPH",
+              "blocks": 1
+            }
+          }
+        }
+      }
+    },
+    "Menu": {},
+    "MenuBlock": {
+      "default": {
+        "primary": {},
+        "items": {}
+      }
+    }
+  }
+}

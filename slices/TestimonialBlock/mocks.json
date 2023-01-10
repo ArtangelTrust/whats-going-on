@@ -1,0 +1,36 @@
+[
+  {
+    "__TYPE__": "SharedSliceContent",
+    "variation": "default",
+    "primary": {},
+    "items": [
+      {
+        "__TYPE__": "GroupItemContent",
+        "value": [
+          [
+            "text",
+            {
+              "__TYPE__": "StructuredTextContent",
+              "value": [
+                {
+                  "type": "paragraph",
+                  "content": {
+                    "text": "Nisi in aliquip occaecat occaecat ad Lorem eiusmod adipisicing aute nulla exercitation. Qui commodo aute ut sunt irure sint duis mollit quis sit cillum. Non voluptate ut adipisicing consectetur reprehenderit esse consectetur aliquip veniam proident tempor consequat adipisicing elit."
+                  }
+                }
+              ]
+            }
+          ],
+          [
+            "name",
+            {
+              "__TYPE__": "FieldContent",
+              "value": "gas",
+              "type": "Text"
+            }
+          ]
+        ]
+      }
+    ]
+  }
+]

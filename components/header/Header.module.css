@@ -1,0 +1,28 @@
+.base {
+  @apply flex justify-between items-end px-12 mt-12 mb-12;
+}
+
+.base h1 {
+  @apply font-display text-6xl;
+}
+
+.base button {
+  @apply text-lg px-4 py-3 border border-dark-grey hover:bg-black hover:text-white transition-colors focus:bg-black focus:text-white;
+}
+
+.breadcrumb {
+  @apply flex space-x-2 text-sm mb-2;
+}
+
+.breadcrumb li::after {
+  @apply ml-2;
+  content: '→';
+}
+
+.breadcrumb a {
+  @apply text-blue;
+}
+
+.breadcrumb li:last-child::after {
+  content: none;
+}

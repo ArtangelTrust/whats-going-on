@@ -1,0 +1,7 @@
+.accordion details {
+  @apply w-full
+}
+
+.accordion summary {
+  @apply bg-yellow text-3xl list-none p-4 flex space-x-4;
+}

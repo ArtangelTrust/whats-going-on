@@ -1,0 +1,3 @@
+.text-block {
+  @apply prose-lg prose px-12;
+}

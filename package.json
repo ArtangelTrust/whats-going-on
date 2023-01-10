@@ -1,0 +1,35 @@
+{
+  "name": "my-app",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint",
+    "slicemachine": "start-slicemachine"
+  },
+  "dependencies": {
+    "@next/font": "13.1.1",
+    "@prismicio/client": "^6.7.3",
+    "@prismicio/helpers": "^2.3.8",
+    "@prismicio/next": "^1.0.2",
+    "@prismicio/react": "^2.5.1",
+    "@prismicio/slice-simulator-react": "^0.2.3",
+    "eslint": "8.31.0",
+    "eslint-config-next": "13.1.1",
+    "next": "13.1.1",
+    "react": "18.2.0",
+    "react-dom": "18.2.0",
+    "react-indiana-drag-scroll": "^2.2.0",
+    "styled-jsx": "^5.1.1"
+  },
+  "devDependencies": {
+    "@prismicio/types": "^0.2.7",
+    "@tailwindcss/typography": "^0.5.8",
+    "autoprefixer": "^10.4.13",
+    "postcss": "^8.4.14",
+    "slice-machine-ui": "^0.6.0",
+    "tailwindcss": "^3.2.4"
+  }
+}
