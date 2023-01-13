@@ -1,23 +1,37 @@
 import Head from "next/head";
 
-import { AccessibilityPanel, Footer } from "components";
+import { useMenu, useTheme } from "lib";
+import { AccessibilityPanel, Footer, Menu } from "components";
 
 import styles from "./BaseLayout.module.css";
 
 export default function BaseLayout({ children }) {
+  const { showMenu } =  useMenu();
+  const { currentTheme } = useTheme();
   return (
-    <div className={styles.base}>
+    <div className={`${styles.base} ${currentTheme}`}>
       <Head>
-        <title>What's Going On?</title>
+        <title>What&apos;s Going On?</title>
         <meta
           name="description"
           content="What&apos;s Going On?"
         />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <div className="min-h-screen pb-12">
-        {children}
-      </div>
+      <a className={styles['skip-navigation-link']} href="#main-content">
+        Skip Navigation
+      </a>
+      {showMenu ? 
+        (
+          <Menu />
+        )
+      :
+        (
+          <div className="min-h-screen pb-12">
+            {children}
+          </div>
+        )
+      }
       <AccessibilityPanel />
       <Footer />
     </div>

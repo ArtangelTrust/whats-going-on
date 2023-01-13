@@ -1,0 +1,23 @@
+.menu {
+  @apply w-full min-h-screen top-0 z-20;
+}
+
+.header {
+  @apply flex justify-between items-center md:items-start px-6 sm:px-12 pt-6 sm:pt-8 mb-12;
+}
+
+.header h1 {
+  @apply font-display text-3xl sm:text-5xl md:text-6xl;
+}
+
+.header button {
+  @apply text-sm px-2 py-1.5 sm:text-base sm:px-3 sm:py-2 md:text-lg md:px-4 md:py-3 border border-dark-grey hover:bg-primary hover:text-secondary focus:bg-primary focus:text-secondary focus:outline-none;
+}
+
+.menu-list {
+  @apply px-6 sm:px-12 space-y-3 md:space-y-4 lg:space-y-6 text-3xl md:text-4xl lg:text-6xl;
+}
+
+.menu-list a {
+  @apply cursor-pointer  focus:outline outline-offset-8 outline-primary;
+}

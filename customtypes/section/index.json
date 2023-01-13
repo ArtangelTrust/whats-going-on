@@ -32,6 +32,9 @@
             },
             "menu": {
               "type": "SharedSlice"
+            },
+            "resource_block": {
+              "type": "SharedSlice"
             }
           }
         }

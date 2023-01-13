@@ -1,3 +1,7 @@
 .base {
-  @apply min-h-screen;
+  @apply min-h-screen bg-secondary text-primary;
+}
+
+.skip-navigation-link {
+  @apply left-[-10000px] absolute z-10 focus:left-0 focus:outline outline-primary outline-offset-4 m-6 bg-secondary;
 }

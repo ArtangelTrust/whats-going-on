@@ -2,6 +2,7 @@ import Head from 'next/head'
 import Image from 'next/image'
 import { SliceZone } from "@prismicio/react";
 import * as prismicH from "@prismicio/helpers";
+import * as prismic from "@prismicio/client"
 
 import { createClient, linkResolver } from "prismicio";
 import { components } from "slices";
@@ -9,20 +10,19 @@ import { components } from "slices";
 import { BaseLayout, Header } from 'components';
 
 export default function Page({content}) {
-  console.log(content)
   return (
     <>
       <Header
-        title={content.data.title}
+        title={content?.data?.title}
         breadcrumb={
           [
             {title: "Home", href:"/"},
-            {title: content.data.section.data.title, href: linkResolver(content.data.section)},
-            {title: content.data.title}
+            {title: content?.data?.section.data.title, href: linkResolver(content?.data.section)},
+            {title: content?.data?.title}
           ]
         }
       />
-      <main className="space-y-12">
+      <main id="main-content" className="space-y-6">
         {content?.data?.slices && (
           <SliceZone slices={content?.data?.slices} components={components} />
         )}
@@ -37,10 +37,14 @@ Page.getLayout = function getLayout(page) {
 
 export async function getStaticPaths() {
   const client = createClient();
-  const documents = await client.getAllByType("page");
+  const documents = await client.getAllByType("page", {
+    predicates: [
+      prismic.predicate.has("my.page.section"),
+    ]
+  });
   return {
     paths: documents.map((doc) => prismicH.asLink(doc, linkResolver)),
-    fallback: true,
+    fallback: false,
   };
 }
 
@@ -58,6 +62,21 @@ const pageGraphQuery = `{
           ...on default {
             primary {
               ...primaryFields
+            }
+            items {
+              ...itemsFields
+            }
+          }
+        }
+      }
+      ...on embed_block {
+        variation {
+          ...on default {
+            primary {
+              ...primaryFields
+            }
+            items {
+              ...itemsFields
             }
           }
         }

@@ -14,25 +14,32 @@ import Link from 'next/link'
  * @param { GalleryProps }
  */
 
+const LinkGuard = ({href, children}) => {
+  return href ? <Link href={href}>{children}</Link> : children
+}
+
 const Gallery = ({ slice }) => (
   <section className={styles['gallery-block']}>
     <Accordion collapsible={slice.primary.collapsible} title={slice.primary.title}>
       <div className={styles.gallery}>
         {slice.items.map((item, index) => (
-          <Link href={linkResolver(item.internal_link)} key={index}>
+          <LinkGuard href={linkResolver(item.internal_link)} key={index}>
             <figure>
-              <Image
-                src={item.image.url} 
-                alt={item.image.alt} 
-                width={item.image.dimensions.width}
-                height={item.image.dimensions.height}
-              />
+              {item.image?.url &&
+                <Image
+                  src={item.image.url} 
+                  alt={item.image.alt} 
+                  width={item.image.dimensions.width}
+                  height={item.image.dimensions.height}
+                />
+              }
               <figcaption>
-                <h2>{item.title}</h2>
-                <PrismicRichText field={item.description}/>
+                {item.title && <h2>{item.title}</h2>}
+                {item.description && <PrismicRichText field={item.description}/>}
               </figcaption>
             </figure>
-          </Link>
+          </LinkGuard>
+          // <></>
         ))}
       </div>
     </Accordion>

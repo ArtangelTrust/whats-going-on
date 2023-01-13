@@ -24,7 +24,7 @@ interface HomeDocumentData {
  * Slice for *Home → Slice Zone*
  *
  */
-type HomeDocumentDataSlicesSlice = TestimonialBlockSlice | TextBlockSlice;
+type HomeDocumentDataSlicesSlice = TestimonialBlockSlice | TextBlockSlice | MenuSlice | GallerySlice | ResourceBlockSlice | SoundcloudBlockSlice;
 /**
  * Home document from Prismic
  *
@@ -35,10 +35,10 @@ type HomeDocumentDataSlicesSlice = TestimonialBlockSlice | TextBlockSlice;
  * @typeParam Lang - Language API ID of the document.
  */
 export type HomeDocument<Lang extends string = string> = prismicT.PrismicDocumentWithoutUID<Simplify<HomeDocumentData>, "home", Lang>;
-/** Content for Page documents */
+/** Content for Subpage documents */
 interface PageDocumentData {
     /**
-     * Title field in *Page*
+     * Title field in *Subpage*
      *
      * - **Field Type**: Text
      * - **Placeholder**: *None*
@@ -49,7 +49,7 @@ interface PageDocumentData {
      */
     title: prismicT.KeyTextField;
     /**
-     * Section field in *Page*
+     * Section field in *Subpage*
      *
      * - **Field Type**: Content Relationship
      * - **Placeholder**: *None*
@@ -60,7 +60,7 @@ interface PageDocumentData {
      */
     section: prismicT.RelationField<"section">;
     /**
-     * Slice Zone field in *Page*
+     * Slice Zone field in *Subpage*
      *
      * - **Field Type**: Slice Zone
      * - **Placeholder**: *None*
@@ -72,12 +72,12 @@ interface PageDocumentData {
     slices: prismicT.SliceZone<PageDocumentDataSlicesSlice>;
 }
 /**
- * Slice for *Page → Slice Zone*
+ * Slice for *Subpage → Slice Zone*
  *
  */
-type PageDocumentDataSlicesSlice = TextBlockSlice | GallerySlice | MenuSlice;
+type PageDocumentDataSlicesSlice = TextBlockSlice | GallerySlice | MenuSlice | EmbedBlockSlice;
 /**
- * Page document from Prismic
+ * Subpage document from Prismic
  *
  * - **API ID**: `page`
  * - **Repeatable**: `true`
@@ -115,7 +115,7 @@ interface SectionDocumentData {
  * Slice for *Section → Slice Zone*
  *
  */
-type SectionDocumentDataSlicesSlice = TextBlockSlice | GallerySlice | MenuSlice;
+type SectionDocumentDataSlicesSlice = TextBlockSlice | GallerySlice | MenuSlice | ResourceBlockSlice;
 /**
  * Section document from Prismic
  *
@@ -126,7 +126,134 @@ type SectionDocumentDataSlicesSlice = TextBlockSlice | GallerySlice | MenuSlice;
  * @typeParam Lang - Language API ID of the document.
  */
 export type SectionDocument<Lang extends string = string> = prismicT.PrismicDocumentWithUID<Simplify<SectionDocumentData>, "section", Lang>;
-export type AllDocumentTypes = HomeDocument | PageDocument | SectionDocument;
+/** Content for Site documents */
+interface SiteDocumentData {
+    /**
+     * Site Description field in *Site*
+     *
+     * - **Field Type**: Rich Text
+     * - **Placeholder**: *None*
+     * - **API ID Path**: site.site_description
+     * - **Tab**: Main
+     * - **Documentation**: https://prismic.io/docs/core-concepts/rich-text-title
+     *
+     */
+    site_description: prismicT.RichTextField;
+    /**
+     * Menu field in *Site*
+     *
+     * - **Field Type**: Group
+     * - **Placeholder**: *None*
+     * - **API ID Path**: site.menu[]
+     * - **Tab**: Main
+     * - **Documentation**: https://prismic.io/docs/core-concepts/group
+     *
+     */
+    menu: prismicT.GroupField<Simplify<SiteDocumentDataMenuItem>>;
+}
+/**
+ * Item in Site → Menu
+ *
+ */
+export interface SiteDocumentDataMenuItem {
+    /**
+     * Link field in *Site → Menu*
+     *
+     * - **Field Type**: Content Relationship
+     * - **Placeholder**: *None*
+     * - **API ID Path**: site.menu[].link
+     * - **Documentation**: https://prismic.io/docs/core-concepts/link-content-relationship
+     *
+     */
+    link: prismicT.RelationField;
+    /**
+     * Title field in *Site → Menu*
+     *
+     * - **Field Type**: Text
+     * - **Placeholder**: *None*
+     * - **API ID Path**: site.menu[].title
+     * - **Documentation**: https://prismic.io/docs/core-concepts/key-text
+     *
+     */
+    title: prismicT.KeyTextField;
+}
+/**
+ * Site document from Prismic
+ *
+ * - **API ID**: `site`
+ * - **Repeatable**: `false`
+ * - **Documentation**: https://prismic.io/docs/core-concepts/custom-types
+ *
+ * @typeParam Lang - Language API ID of the document.
+ */
+export type SiteDocument<Lang extends string = string> = prismicT.PrismicDocumentWithoutUID<Simplify<SiteDocumentData>, "site", Lang>;
+export type AllDocumentTypes = HomeDocument | PageDocument | SectionDocument | SiteDocument;
+/**
+ * Primary content in EmbedBlock → Primary
+ *
+ */
+interface EmbedBlockSliceDefaultPrimary {
+    /**
+     * Title field in *EmbedBlock → Primary*
+     *
+     * - **Field Type**: Text
+     * - **Placeholder**: *None*
+     * - **API ID Path**: embed_block.primary.title
+     * - **Documentation**: https://prismic.io/docs/core-concepts/key-text
+     *
+     */
+    title: prismicT.KeyTextField;
+    /**
+     * Collapsible field in *EmbedBlock → Primary*
+     *
+     * - **Field Type**: Boolean
+     * - **Placeholder**: *None*
+     * - **Default Value**: false
+     * - **API ID Path**: embed_block.primary.collapsible
+     * - **Documentation**: https://prismic.io/docs/core-concepts/boolean
+     *
+     */
+    collapsible: prismicT.BooleanField;
+}
+/**
+ * Item in EmbedBlock → Items
+ *
+ */
+export interface EmbedBlockSliceDefaultItem {
+    /**
+     * Embed Link field in *EmbedBlock → Items*
+     *
+     * - **Field Type**: Embed
+     * - **Placeholder**: *None*
+     * - **API ID Path**: embed_block.items[].embed_link
+     * - **Documentation**: https://prismic.io/docs/core-concepts/embed
+     *
+     */
+    embed_link: prismicT.EmbedField;
+}
+/**
+ * Default variation for EmbedBlock Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: `EmbedBlock`
+ * - **Documentation**: https://prismic.io/docs/core-concepts/reusing-slices
+ *
+ */
+export type EmbedBlockSliceDefault = prismicT.SharedSliceVariation<"default", Simplify<EmbedBlockSliceDefaultPrimary>, Simplify<EmbedBlockSliceDefaultItem>>;
+/**
+ * Slice variation for *EmbedBlock*
+ *
+ */
+type EmbedBlockSliceVariation = EmbedBlockSliceDefault;
+/**
+ * EmbedBlock Shared Slice
+ *
+ * - **API ID**: `embed_block`
+ * - **Description**: `EmbedBlock`
+ * - **Documentation**: https://prismic.io/docs/core-concepts/reusing-slices
+ *
+ */
+export type EmbedBlockSlice = prismicT.SharedSlice<"embed_block", EmbedBlockSliceVariation>;
 /**
  * Primary content in GalleryBlock → Primary
  *
@@ -238,6 +365,16 @@ export interface MenuSliceDefaultItem {
      *
      */
     link: prismicT.RelationField<"page" | "section" | "home">;
+    /**
+     * Title field in *MenuBlock → Items*
+     *
+     * - **Field Type**: Text
+     * - **Placeholder**: *None*
+     * - **API ID Path**: menu.items[].title
+     * - **Documentation**: https://prismic.io/docs/core-concepts/key-text
+     *
+     */
+    title: prismicT.KeyTextField;
 }
 /**
  * Default variation for MenuBlock Slice
@@ -262,6 +399,178 @@ type MenuSliceVariation = MenuSliceDefault;
  *
  */
 export type MenuSlice = prismicT.SharedSlice<"menu", MenuSliceVariation>;
+/**
+ * Primary content in ResourceBlock → Primary
+ *
+ */
+interface ResourceBlockSliceDefaultPrimary {
+    /**
+     * Title field in *ResourceBlock → Primary*
+     *
+     * - **Field Type**: Text
+     * - **Placeholder**: *None*
+     * - **API ID Path**: resource_block.primary.title
+     * - **Documentation**: https://prismic.io/docs/core-concepts/key-text
+     *
+     */
+    title: prismicT.KeyTextField;
+    /**
+     * Collapsible field in *ResourceBlock → Primary*
+     *
+     * - **Field Type**: Boolean
+     * - **Placeholder**: *None*
+     * - **Default Value**: false
+     * - **API ID Path**: resource_block.primary.collapsible
+     * - **Documentation**: https://prismic.io/docs/core-concepts/boolean
+     *
+     */
+    collapsible: prismicT.BooleanField;
+    /**
+     * Description field in *ResourceBlock → Primary*
+     *
+     * - **Field Type**: Rich Text
+     * - **Placeholder**: *None*
+     * - **API ID Path**: resource_block.primary.description
+     * - **Documentation**: https://prismic.io/docs/core-concepts/rich-text-title
+     *
+     */
+    description: prismicT.RichTextField;
+}
+/**
+ * Item in ResourceBlock → Items
+ *
+ */
+export interface ResourceBlockSliceDefaultItem {
+    /**
+     * Description field in *ResourceBlock → Items*
+     *
+     * - **Field Type**: Text
+     * - **Placeholder**: *None*
+     * - **API ID Path**: resource_block.items[].description
+     * - **Documentation**: https://prismic.io/docs/core-concepts/key-text
+     *
+     */
+    description: prismicT.KeyTextField;
+    /**
+     * Title field in *ResourceBlock → Items*
+     *
+     * - **Field Type**: Text
+     * - **Placeholder**: *None*
+     * - **API ID Path**: resource_block.items[].title
+     * - **Documentation**: https://prismic.io/docs/core-concepts/key-text
+     *
+     */
+    title: prismicT.KeyTextField;
+    /**
+     * Date field in *ResourceBlock → Items*
+     *
+     * - **Field Type**: Date
+     * - **Placeholder**: *None*
+     * - **API ID Path**: resource_block.items[].date
+     * - **Documentation**: https://prismic.io/docs/core-concepts/date
+     *
+     */
+    date: prismicT.DateField;
+    /**
+     * Type field in *ResourceBlock → Items*
+     *
+     * - **Field Type**: Select
+     * - **Placeholder**: *None*
+     * - **Default Value**: PDF
+     * - **API ID Path**: resource_block.items[].type
+     * - **Documentation**: https://prismic.io/docs/core-concepts/select
+     *
+     */
+    type: prismicT.SelectField<"PDF" | "Link", "filled">;
+    /**
+     * resource field in *ResourceBlock → Items*
+     *
+     * - **Field Type**: Link
+     * - **Placeholder**: *None*
+     * - **API ID Path**: resource_block.items[].resource
+     * - **Documentation**: https://prismic.io/docs/core-concepts/link-content-relationship
+     *
+     */
+    resource: prismicT.LinkField;
+}
+/**
+ * Default variation for ResourceBlock Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: `ResourceBlock`
+ * - **Documentation**: https://prismic.io/docs/core-concepts/reusing-slices
+ *
+ */
+export type ResourceBlockSliceDefault = prismicT.SharedSliceVariation<"default", Simplify<ResourceBlockSliceDefaultPrimary>, Simplify<ResourceBlockSliceDefaultItem>>;
+/**
+ * Slice variation for *ResourceBlock*
+ *
+ */
+type ResourceBlockSliceVariation = ResourceBlockSliceDefault;
+/**
+ * ResourceBlock Shared Slice
+ *
+ * - **API ID**: `resource_block`
+ * - **Description**: `ResourceBlock`
+ * - **Documentation**: https://prismic.io/docs/core-concepts/reusing-slices
+ *
+ */
+export type ResourceBlockSlice = prismicT.SharedSlice<"resource_block", ResourceBlockSliceVariation>;
+/**
+ * Primary content in SoundcloudBlock → Primary
+ *
+ */
+interface SoundcloudBlockSliceDefaultPrimary {
+    /**
+     * Title field in *SoundcloudBlock → Primary*
+     *
+     * - **Field Type**: Text
+     * - **Placeholder**: *None*
+     * - **API ID Path**: soundcloud_block.primary.title
+     * - **Documentation**: https://prismic.io/docs/core-concepts/key-text
+     *
+     */
+    title: prismicT.KeyTextField;
+}
+/**
+ * Item in SoundcloudBlock → Items
+ *
+ */
+export interface SoundcloudBlockSliceDefaultItem {
+    /**
+     * Embed Link field in *SoundcloudBlock → Items*
+     *
+     * - **Field Type**: Embed
+     * - **Placeholder**: *None*
+     * - **API ID Path**: soundcloud_block.items[].link
+     * - **Documentation**: https://prismic.io/docs/core-concepts/embed
+     *
+     */
+    link: prismicT.EmbedField;
+}
+/**
+ * Default variation for SoundcloudBlock Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: `SoundcloudBlock`
+ * - **Documentation**: https://prismic.io/docs/core-concepts/reusing-slices
+ *
+ */
+export type SoundcloudBlockSliceDefault = prismicT.SharedSliceVariation<"default", Simplify<SoundcloudBlockSliceDefaultPrimary>, Simplify<SoundcloudBlockSliceDefaultItem>>;
+/**
+ * Slice variation for *SoundcloudBlock*
+ *
+ */
+type SoundcloudBlockSliceVariation = SoundcloudBlockSliceDefault;
+/**
+ * SoundcloudBlock Shared Slice
+ *
+ * - **API ID**: `soundcloud_block`
+ * - **Description**: `SoundcloudBlock`
+ * - **Documentation**: https://prismic.io/docs/core-concepts/reusing-slices
+ *
+ */
+export type SoundcloudBlockSlice = prismicT.SharedSlice<"soundcloud_block", SoundcloudBlockSliceVariation>;
 /**
  * Item in TestimonialBlock → Items
  *
@@ -317,11 +626,38 @@ export type TestimonialBlockSlice = prismicT.SharedSlice<"testimonial_block", Te
  */
 interface TextBlockSliceDefaultPrimary {
     /**
-     * Text Field field in *TextBlock → Primary*
+     * Title field in *TextBlock → Primary*
+     *
+     * - **Field Type**: Text
+     * - **Placeholder**: *None*
+     * - **API ID Path**: text_block.primary.title
+     * - **Documentation**: https://prismic.io/docs/core-concepts/key-text
+     *
+     */
+    title: prismicT.KeyTextField;
+    /**
+     * Collapsible field in *TextBlock → Primary*
+     *
+     * - **Field Type**: Boolean
+     * - **Placeholder**: *None*
+     * - **Default Value**: false
+     * - **API ID Path**: text_block.primary.collapsible
+     * - **Documentation**: https://prismic.io/docs/core-concepts/boolean
+     *
+     */
+    collapsible: prismicT.BooleanField;
+}
+/**
+ * Item in TextBlock → Items
+ *
+ */
+export interface TextBlockSliceDefaultItem {
+    /**
+     * Text field in *TextBlock → Items*
      *
      * - **Field Type**: Rich Text
-     * - **Placeholder**: Simple text field
-     * - **API ID Path**: text_block.primary.text
+     * - **Placeholder**: *None*
+     * - **API ID Path**: text_block.items[].text
      * - **Documentation**: https://prismic.io/docs/core-concepts/rich-text-title
      *
      */
@@ -335,7 +671,7 @@ interface TextBlockSliceDefaultPrimary {
  * - **Documentation**: https://prismic.io/docs/core-concepts/reusing-slices
  *
  */
-export type TextBlockSliceDefault = prismicT.SharedSliceVariation<"default", Simplify<TextBlockSliceDefaultPrimary>, never>;
+export type TextBlockSliceDefault = prismicT.SharedSliceVariation<"default", Simplify<TextBlockSliceDefaultPrimary>, Simplify<TextBlockSliceDefaultItem>>;
 /**
  * Slice variation for *TextBlock*
  *
@@ -355,6 +691,6 @@ declare module "@prismicio/client" {
         (repositoryNameOrEndpoint: string, options?: prismic.ClientConfig): prismic.Client<AllDocumentTypes>;
     }
     namespace Content {
-        export type { HomeDocumentData, HomeDocumentDataSlicesSlice, HomeDocument, PageDocumentData, PageDocumentDataSlicesSlice, PageDocument, SectionDocumentData, SectionDocumentDataSlicesSlice, SectionDocument, AllDocumentTypes, GallerySliceDefaultPrimary, GallerySliceDefaultItem, GallerySliceDefault, GallerySliceVariation, GallerySlice, MenuSliceDefaultItem, MenuSliceDefault, MenuSliceVariation, MenuSlice, TestimonialBlockSliceDefaultItem, TestimonialBlockSliceDefault, TestimonialBlockSliceVariation, TestimonialBlockSlice, TextBlockSliceDefaultPrimary, TextBlockSliceDefault, TextBlockSliceVariation, TextBlockSlice };
+        export type { HomeDocumentData, HomeDocumentDataSlicesSlice, HomeDocument, PageDocumentData, PageDocumentDataSlicesSlice, PageDocument, SectionDocumentData, SectionDocumentDataSlicesSlice, SectionDocument, SiteDocumentData, SiteDocumentDataMenuItem, SiteDocument, AllDocumentTypes, EmbedBlockSliceDefaultPrimary, EmbedBlockSliceDefaultItem, EmbedBlockSliceDefault, EmbedBlockSliceVariation, EmbedBlockSlice, GallerySliceDefaultPrimary, GallerySliceDefaultItem, GallerySliceDefault, GallerySliceVariation, GallerySlice, MenuSliceDefaultItem, MenuSliceDefault, MenuSliceVariation, MenuSlice, ResourceBlockSliceDefaultPrimary, ResourceBlockSliceDefaultItem, ResourceBlockSliceDefault, ResourceBlockSliceVariation, ResourceBlockSlice, SoundcloudBlockSliceDefaultPrimary, SoundcloudBlockSliceDefaultItem, SoundcloudBlockSliceDefault, SoundcloudBlockSliceVariation, SoundcloudBlockSlice, TestimonialBlockSliceDefaultItem, TestimonialBlockSliceDefault, TestimonialBlockSliceVariation, TestimonialBlockSlice, TextBlockSliceDefaultPrimary, TextBlockSliceDefaultItem, TextBlockSliceDefault, TextBlockSliceVariation, TextBlockSlice };
     }
 }

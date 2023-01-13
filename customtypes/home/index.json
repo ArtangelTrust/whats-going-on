@@ -15,6 +15,18 @@
             },
             "text_block": {
               "type": "SharedSlice"
+            },
+            "menu": {
+              "type": "SharedSlice"
+            },
+            "gallery": {
+              "type": "SharedSlice"
+            },
+            "resource_block": {
+              "type": "SharedSlice"
+            },
+            "soundcloud_block": {
+              "type": "SharedSlice"
             }
           }
         }

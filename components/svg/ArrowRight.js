@@ -1,4 +1,4 @@
-export default function Footer({ className, style }) {
+export default function ArrowRight({ className, style }) {
   return (
     <svg 
       width="43.4px"

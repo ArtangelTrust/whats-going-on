@@ -3,22 +3,35 @@
     "__TYPE__": "SharedSliceContent",
     "variation": "default",
     "primary": {
-      "text": {
-        "__TYPE__": "StructuredTextContent",
-        "value": [
-          {
-            "type": "paragraph",
-            "content": {
-              "text": "Tempor adipisicing amet amet. Ullamco est est mollit incididunt officia dolore mollit."
-            }
-          }
-        ]
+      "title": {
+        "__TYPE__": "FieldContent",
+        "value": "large",
+        "type": "Text"
+      },
+      "collapsible": {
+        "__TYPE__": "BooleanContent",
+        "value": true
       }
     },
     "items": [
       {
         "__TYPE__": "GroupItemContent",
-        "value": []
+        "value": [
+          [
+            "text",
+            {
+              "__TYPE__": "StructuredTextContent",
+              "value": [
+                {
+                  "type": "paragraph",
+                  "content": {
+                    "text": "Quis nostrud culpa voluptate labore sint sint consequat aliquip aliqua nulla sit Lorem duis exercitation. Occaecat nulla quis consequat aliquip esse cillum officia ullamco duis id ea nisi. Elit enim aliquip occaecat quis proident esse aute."
+                  }
+                }
+              ]
+            }
+          ]
+        ]
       }
     ]
   }

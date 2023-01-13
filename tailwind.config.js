@@ -6,19 +6,36 @@ module.exports = {
   content: [
     "./pages/**/*.{js,ts,jsx,tsx}",
     "./components/**/*.{js,ts,jsx,tsx}",
+    "./slices/**/*.{js,ts,jsx,tsx}",
   ],
   theme: {
     colors: {
       transparent: 'transparent',
       current: 'currentColor',
-      'white': '#ffffff',
-      'black': '#000000',
-      'blue': '#2A4194',
-      'yellow': '#FFDF6A',
-      'light-grey': '#ECEAE5',
-      'dark-grey': '#717070'
+      'primary' : 'var(--color-primary)',
+      'secondary' : 'var(--color-secondary)',
+      'highlight' : 'var(--color-highlight)',
+      'active' : 'var(--color-active)',
+      'white': 'var(--white)',
+      'black': 'var(--black)',
+      'blue': 'var(--blue)',
+      'yellow': 'var(--yellow)',
+      'light-grey': 'var(--light-grey)',
+      'dark-grey': 'var(--dark-grey)',
     },
     extend: {
+      textColor: {
+        'primary' : 'var(--color-primary)',
+        'secondary' : 'var(--color-secondary)',
+        'highlight' : 'var(--color-highlight)',
+        'active' : 'var(--color-active)',
+      },
+      backgroundColor: {
+        'primary' : 'var(--color-primary)',
+        'secondary' : 'var(--color-secondary)',
+        'highlight' : 'var(--color-highlight)',
+        'active' : 'var(--color-active)',
+      },
       fontFamily: {
         'sans': ['Fold Grotesque', ...defaultTheme.fontFamily.sans],
         'display': ['EH Normal', ...defaultTheme.fontFamily.sans]
@@ -29,7 +46,7 @@ module.exports = {
       typography: (theme) => ({
         DEFAULT: {
           css: {
-            color: theme('colors.black'),
+            color: 'var(--color-primary)',
           },
         },
       }),

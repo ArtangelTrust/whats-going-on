@@ -3,11 +3,11 @@
 }
 
 .scroll-container {
-  @apply flex space-x-10 px-12 py-2;
+  @apply flex space-x-10 px-6 sm:px-12 py-2;
 }
 
 .testimonial {
-  @apply shadow-flat shadow-yellow prose prose-xl py-5 px-10 min-w-[600px];
+  @apply shadow-flat shadow-highlight prose prose-xl py-5 px-10 min-w-[600px];
 }
 
 .testimonial span {

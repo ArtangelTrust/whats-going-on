@@ -3,5 +3,5 @@
 }
 
 .accordion summary {
-  @apply bg-yellow text-3xl list-none p-4 flex space-x-4;
+  @apply cursor-pointer bg-highlight text-primary text-3xl list-none p-4 flex space-x-4 focus:outline outline-primary outline-offset-8;
 }

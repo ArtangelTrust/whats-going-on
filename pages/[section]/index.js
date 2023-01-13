@@ -12,15 +12,15 @@ export default function Section({content}) {
   return (
     <>
       <Header
-        title={content.data.title}
+        title={content?.data?.title}
         breadcrumb={
           [
             {title: "Home", href:"/"},
-            {title: content.data.title}
+            {title: content?.data?.title}
           ]
         }
       />
-      <main className="space-y-12">
+      <main id="main-content" className="space-y-6">
         {content?.data?.slices && (
           <SliceZone slices={content?.data?.slices} components={components} />
         )}
@@ -38,7 +38,7 @@ export async function getStaticPaths() {
   const documents = await client.getAllByType("section");
   return {
     paths: documents.map((doc) => prismicH.asLink(doc, linkResolver)),
-    fallback: true,
+    fallback: false,
   };
 }
 
@@ -51,6 +51,21 @@ const sectionGraphQuery = `{
           ...on default {
             primary {
               ...primaryFields
+            }
+            items {
+              ...itemsFields
+            }
+          }
+        }
+      }
+      ...on resource_block {
+        variation {
+          ...on default {
+            primary {
+              ...primaryFields
+            }
+            items {
+              ...itemsFields
             }
           }
         }

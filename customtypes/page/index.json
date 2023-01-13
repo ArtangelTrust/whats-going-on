@@ -1,6 +1,6 @@
 {
   "id": "page",
-  "label": "Page",
+  "label": "Subpage",
   "repeatable": true,
   "status": true,
   "json": {
@@ -41,6 +41,9 @@
               "type": "SharedSlice"
             },
             "menu": {
+              "type": "SharedSlice"
+            },
+            "embed_block": {
               "type": "SharedSlice"
             }
           }

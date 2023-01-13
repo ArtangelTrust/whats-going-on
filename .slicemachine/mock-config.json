@@ -2,12 +2,14 @@
   "_cts": {
     "home": {},
     "page": {},
-    "section": {}
+    "section": {},
+    "site": {}
   },
   "slices": {
     "TextBlock": {
       "default": {
-        "primary": {
+        "primary": {},
+        "items": {
           "text": {
             "config": {
               "patternType": "PARAGRAPH",
@@ -49,6 +51,30 @@
       "default": {
         "primary": {},
         "items": {}
+      }
+    },
+    "ResourceBlock": {
+      "default": {
+        "primary": {
+          "description": {
+            "config": {
+              "patternType": "PARAGRAPH",
+              "blocks": 1
+            }
+          }
+        },
+        "items": {}
+      }
+    },
+    "SoundcloudBlock": {
+      "default": {
+        "primary": {},
+        "items": {}
+      }
+    },
+    "EmbedBlock": {
+      "default": {
+        "primary": {}
       }
     }
   }

@@ -1,0 +1,77 @@
+[
+  {
+    "__TYPE__": "SharedSliceContent",
+    "variation": "default",
+    "primary": {
+      "title": {
+        "__TYPE__": "FieldContent",
+        "value": "brave",
+        "type": "Text"
+      },
+      "collapsible": {
+        "__TYPE__": "BooleanContent",
+        "value": true
+      },
+      "description": {
+        "__TYPE__": "StructuredTextContent",
+        "value": [
+          {
+            "type": "paragraph",
+            "content": {
+              "text": "Et qui labore exercitation excepteur culpa reprehenderit cupidatat pariatur non aliqua eiusmod in eu deserunt duis. Eu officia veniam duis non non cillum consequat duis. Excepteur in in irure magna dolore ullamco sunt quis sint nulla labore excepteur adipisicing reprehenderit deserunt."
+            }
+          }
+        ]
+      }
+    },
+    "items": [
+      {
+        "__TYPE__": "GroupItemContent",
+        "value": [
+          [
+            "description",
+            {
+              "__TYPE__": "FieldContent",
+              "value": "deer",
+              "type": "Text"
+            }
+          ],
+          [
+            "title",
+            {
+              "__TYPE__": "FieldContent",
+              "value": "century",
+              "type": "Text"
+            }
+          ],
+          [
+            "date",
+            {
+              "__TYPE__": "FieldContent",
+              "type": "Date",
+              "value": "2015-02-19"
+            }
+          ],
+          [
+            "type",
+            {
+              "__TYPE__": "FieldContent",
+              "value": "Link",
+              "type": "Select"
+            }
+          ],
+          [
+            "resource",
+            {
+              "__TYPE__": "LinkContent",
+              "value": {
+                "__TYPE__": "ExternalLink",
+                "url": "https://slicemachine.dev"
+              }
+            }
+          ]
+        ]
+      }
+    ]
+  }
+]

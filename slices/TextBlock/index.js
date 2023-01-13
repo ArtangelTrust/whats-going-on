@@ -1,6 +1,8 @@
 import React from 'react'
 import { PrismicRichText } from '@prismicio/react'
 
+import { Accordion } from 'components'
+
 import styles from "./index.module.css"
 
 /**
@@ -11,7 +13,11 @@ import styles from "./index.module.css"
 
 const TextBlock = ({ slice }) => (
   <section className={styles['text-block']}>
-    <PrismicRichText field={slice.primary.text}/>
+    <Accordion collapsible={slice.primary.collapsible} title={slice.primary.title}>
+      {slice.items.map((item, index) => (
+        <PrismicRichText key={index} field={item.text}/>
+      ))}
+    </Accordion>
   </section>
 )
 

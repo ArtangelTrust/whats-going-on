@@ -1,9 +1,9 @@
 .base {
-  @apply border-y border-dark-grey sticky bottom-0 px-12 py-4 flex space-x-2 justify-end bg-white;
+  @apply border-y border-dark-grey sticky bottom-0 px-6 sm:px-12 py-4 flex space-x-2 justify-end bg-secondary text-primary;
 }
 
 .base button {
-  @apply border border-dark-grey w-6 h-6 rounded-full;
+  @apply border border-dark-grey w-6 h-6 rounded-full focus:outline  outline-primary outline-offset-4;
 }
 
 .default {

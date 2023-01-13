@@ -1,5 +1,9 @@
 import React from 'react'
-import { PrismicRichText } from '@prismicio/react'
+
+import styles from "./index.module.css"
+import Link from 'next/link'
+import { ArrowRight } from 'components'
+import { linkResolver } from 'prismicio'
 
 /**
  * @typedef {import("@prismicio/client").Content.MenuSlice} MenuSlice
@@ -7,29 +11,19 @@ import { PrismicRichText } from '@prismicio/react'
  * @param { MenuProps }
  */
 const Menu = ({ slice }) => (
-  <section>
-    <span className="title">
-      {
-        slice.primary.title ?
-        <PrismicRichText field={slice.primary.title}/>
-        : <h2>Template slice, update me!</h2>
-      }
-    </span>
-    {
-      slice.primary.description ?
-      <PrismicRichText field={slice.primary.description}/>
-      : <p>start by editing this slice from inside Slice Machine!</p>
-    }
-    <style jsx>{`
-        section {
-          max-width: 600px;
-          margin: 4em auto;
-          text-align: center;
-        }
-        .title {
-          color: #8592e0;
-        }
-    `}</style>
+  <section className={styles['menu-block']}>
+    {slice.items.map((item, index) => (
+      <Link 
+        href={linkResolver(item.link)} 
+        key={index}
+        className={styles['menu-link']}
+      >
+        <div className={styles['menu-item']}>
+          <p>{item.title}</p>
+          <ArrowRight className="flex-shrink-0 w-1/2 " />
+        </div>
+      </Link>
+    ))}
   </section>
 )
 

@@ -1,17 +1,17 @@
-.base {
-  @apply flex justify-between items-end px-12 mt-12 mb-12;
+.header {
+  @apply flex justify-between items-center md:items-start px-6 sm:px-12 pt-6 sm:pt-8 mb-12;
 }
 
-.base h1 {
-  @apply font-display text-6xl;
+.header h1 {
+  @apply font-display text-3xl sm:text-5xl md:text-6xl;
 }
 
-.base button {
-  @apply text-lg px-4 py-3 border border-dark-grey hover:bg-black hover:text-white transition-colors focus:bg-black focus:text-white;
+.header button {
+  @apply text-sm px-2 py-1.5 sm:text-base sm:px-3 sm:py-2 md:text-lg md:px-4 md:py-3 border border-dark-grey hover:bg-primary hover:text-secondary focus:bg-primary focus:text-secondary focus:outline-none;
 }
 
 .breadcrumb {
-  @apply flex space-x-2 text-sm mb-2;
+  @apply flex space-x-2 text-xs sm:text-sm mb-2;
 }
 
 .breadcrumb li::after {
@@ -20,7 +20,7 @@
 }
 
 .breadcrumb a {
-  @apply text-blue;
+  @apply text-active focus:outline outline-primary outline-offset-4;
 }
 
 .breadcrumb li:last-child::after {

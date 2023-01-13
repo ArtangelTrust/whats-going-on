@@ -1,6 +1,9 @@
 // Layouts
 export { default as BaseLayout } from "components/layout/BaseLayout.js";
 
+// Menu
+export { default as Menu } from "components/menu/Menu.js";
+
 // Header
 export { default as Header } from "components/header/Header.js";
 

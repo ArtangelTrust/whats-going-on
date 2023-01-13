@@ -3,7 +3,7 @@ import { useState } from "react";
 import styles from "./Accordion.module.css";
 
 export default function Accordion({ 
-  defaultOpen = true, 
+  defaultOpen = false, 
   collapsible = false, 
   title = "", 
   children 
@@ -22,12 +22,11 @@ export default function Accordion({
       >
         <summary className="bg-yellow">
           <ArrowRight 
-            className="transition w-8 h-8" 
-            style={{transform: open && 'rotate(90deg)'}}
+            className={`transition-transform w-8 h-8 ${open && 'rotate-90'}`} 
           />
           <p>{title}</p>
         </summary>
-          {open && children}
+        {open && children}
       </details>
     );
   } else {

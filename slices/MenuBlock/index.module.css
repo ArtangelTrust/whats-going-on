@@ -1,0 +1,19 @@
+.menu-block {
+  @apply my-4 border-y border-dark-grey;
+}
+
+.menu-link {
+  @apply border-b border-dark-grey block focus:text-secondary focus:bg-primary focus:transition-colors hover:text-secondary hover:bg-primary hover:transition-colors focus:outline-none;
+}
+
+.menu-link:last-of-type {
+  @apply border-none;
+}
+
+.menu-item {
+  @apply px-6 sm:px-12 flex justify-between py-3 text-3xl;
+}
+
+.menu-item svg {
+  @apply w-7;
+}
