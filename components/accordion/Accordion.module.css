@@ -1,7 +1,7 @@
-.accordion details {
-  @apply w-full
+.details {
+  @apply w-full;
 }
 
-.accordion summary {
-  @apply cursor-pointer bg-highlight text-primary text-3xl list-none p-4 flex space-x-4 focus:outline outline-primary outline-offset-8;
+.summary {
+  @apply cursor-pointer bg-highlight text-primary text-3xl list-none p-4 flex space-x-4 focus:outline active:outline outline-primary outline-offset-8;
 }

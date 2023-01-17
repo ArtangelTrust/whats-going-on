@@ -17,15 +17,23 @@ export default function Menu() {
     toggleMenu()
   }
 
+  const handleHome = () => {
+    router.push("/")
+    toggleMenu()
+  }
+
   return (
     <div className={styles.menu}>
       <header className={styles.header}>
         <div>
-          <Link href="/">
+          <a
+            tabIndex="0" 
+            onClick={() => handleHome()}
+          >
             <h1>“What&apos;s Going On?”</h1>
-          </Link>
+          </a>
         </div>
-        <button onClick={toggleMenu}>X</button>
+        <button onClick={toggleMenu}>✕</button>
       </header>
       {menuItems && 
         <ul className={styles['menu-list']}>

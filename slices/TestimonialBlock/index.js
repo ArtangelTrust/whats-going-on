@@ -19,7 +19,7 @@ const TestimonialBlock = ({ slice }) => (
             <PrismicRichText field={item.text}/>
           }
           {item.name && 
-            <span>{item.name}</span>
+            <p className={styles.name}>{item.name}</p>
           }
         </div>
       ))}

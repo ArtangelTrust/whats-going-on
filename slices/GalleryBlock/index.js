@@ -39,7 +39,6 @@ const Gallery = ({ slice }) => (
               </figcaption>
             </figure>
           </LinkGuard>
-          // <></>
         ))}
       </div>
     </Accordion>

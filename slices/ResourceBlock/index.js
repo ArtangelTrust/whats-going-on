@@ -25,10 +25,12 @@ const ResourceBlock = ({ slice }) => (
       }
       <div className={styles.resources}>
        {slice.items.map((item, index) => (
-          <Link
+          <a
             key={index}
             href={item.resource.url || "/"}
             className={styles['resource-link']}
+            target="_blank"
+            rel="noreferrer"
           >
             <span>{item.type}</span>
             <div>
@@ -38,7 +40,7 @@ const ResourceBlock = ({ slice }) => (
                 <p>{item.date}</p>
               </div>
             </div>
-          </Link>
+          </a>
         ))}
       </div>
     </Accordion>

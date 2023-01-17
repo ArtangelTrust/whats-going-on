@@ -1,3 +1,4 @@
+import cn from "classnames";
 import { ArrowRight } from "components";
 import { useState } from "react";
 import styles from "./Accordion.module.css";
@@ -14,20 +15,21 @@ export default function Accordion({
   const [open, setOpen] = useState(defaultOpen);
   if (collapsible) {
     return (
-      <details
-        className={styles.accordion}
+      <div
+        className={cn(styles.details, { "pb-8": open })}
         open={defaultOpen}
         onKeyDown={handleKey}
         onClick={() => setOpen(o => !o)}
+        tabIndex="0"
       >
-        <summary className="bg-yellow">
+        <div className={styles.summary}>
           <ArrowRight 
             className={`transition-transform w-8 h-8 ${open && 'rotate-90'}`} 
           />
           <p>{title}</p>
-        </summary>
+        </div>
         {open && children}
-      </details>
+      </div>
     );
   } else {
     return children;

@@ -49,6 +49,18 @@ module.exports = {
             color: 'var(--color-primary)',
           },
         },
+        '2xl': {
+          css: {
+            fontSize: '1.5rem',
+            lineHeight: '1.5',
+            p: {
+              fontSize: '1.5rem',
+              lineHeight: '1.5',
+              marginTop: '1.3em',
+              marginBottom: '1.3em',
+            }
+          }
+        }
       }),
     },
   },

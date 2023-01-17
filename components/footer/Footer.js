@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 
 import { linkResolver } from "prismicio";
 import { useMenu } from "lib";
@@ -10,10 +11,12 @@ export default function Footer() {
 
   return (
     <footer className={styles.footer}>
-      <div>
-        <p>
-          Artangel
-        </p>
+      <div className={styles.logo}>
+        <Image 
+          src="/Artangel_black.svg"
+          width="323"
+          height="86"
+        />
       </div>
       <div>
         <ul>
@@ -35,7 +38,7 @@ export default function Footer() {
         <p>
           <a href="mailto:info@artangel.org.uk">info@artangel.org.uk</a>
         </p>
-        <p className="text-sm">
+        <p className="text-sm lg:text-base">
           For individuals wanting to access the films, please email <a href="mailto:info@artangel.org.uk">info@artangel.org.uk</a>
         </p>
       </div>

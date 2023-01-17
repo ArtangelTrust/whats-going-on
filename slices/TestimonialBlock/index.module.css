@@ -10,6 +10,6 @@
   @apply shadow-flat shadow-highlight prose prose-xl py-5 px-10 min-w-[600px];
 }
 
-.testimonial span {
+.name {
   @apply text-base;
 }
