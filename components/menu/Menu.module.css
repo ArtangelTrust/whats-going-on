@@ -3,7 +3,7 @@
 }
 
 .header {
-  @apply flex justify-between items-end px-6 sm:px-12 pt-6 sm:pt-8 mb-12 mt-7;
+  @apply flex justify-between items-end px-6 sm:px-12 pt-6 sm:pt-16 mb-12 ;
 }
 
 .header h1 {

@@ -1,0 +1,24 @@
+[
+  {
+    "__TYPE__": "SharedSliceContent",
+    "variation": "default",
+    "primary": {
+      "username": {
+        "__TYPE__": "FieldContent",
+        "value": "shinning",
+        "type": "Text"
+      },
+      "formhash": {
+        "__TYPE__": "FieldContent",
+        "value": "spent",
+        "type": "Text"
+      }
+    },
+    "items": [
+      {
+        "__TYPE__": "GroupItemContent",
+        "value": []
+      }
+    ]
+  }
+]

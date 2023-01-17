@@ -35,6 +35,15 @@
             },
             "resource_block": {
               "type": "SharedSlice"
+            },
+            "wufoo_form": {
+              "type": "SharedSlice"
+            },
+            "embed_block": {
+              "type": "SharedSlice"
+            },
+            "testimonial_block": {
+              "type": "SharedSlice"
             }
           }
         }

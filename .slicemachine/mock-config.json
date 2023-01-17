@@ -76,6 +76,11 @@
       "default": {
         "primary": {}
       }
+    },
+    "WufooForm": {
+      "default": {
+        "primary": {}
+      }
     }
   }
 }

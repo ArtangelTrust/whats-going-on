@@ -7,6 +7,7 @@ import ResourceBlock from './ResourceBlock';
 import SoundcloudBlock from './SoundcloudBlock';
 import TestimonialBlock from './TestimonialBlock';
 import TextBlock from './TextBlock';
+import WufooForm from './WufooForm';
 
 export {
 	EmbedBlock,
@@ -16,6 +17,7 @@ export {
 	SoundcloudBlock,
 	TestimonialBlock,
 	TextBlock,
+	WufooForm,
 };
 
 export const components = {
@@ -26,4 +28,5 @@ export const components = {
 	soundcloud_block: SoundcloudBlock,
 	testimonial_block: TestimonialBlock,
 	text_block: TextBlock,
+	wufoo_form: WufooForm,
 };

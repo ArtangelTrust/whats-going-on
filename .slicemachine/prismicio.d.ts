@@ -115,7 +115,7 @@ interface SectionDocumentData {
  * Slice for *Section → Slice Zone*
  *
  */
-type SectionDocumentDataSlicesSlice = TextBlockSlice | GallerySlice | MenuSlice | ResourceBlockSlice;
+type SectionDocumentDataSlicesSlice = TextBlockSlice | GallerySlice | MenuSlice | ResourceBlockSlice | WufooFormSlice | EmbedBlockSlice | TestimonialBlockSlice;
 /**
  * Section document from Prismic
  *
@@ -686,11 +686,60 @@ type TextBlockSliceVariation = TextBlockSliceDefault;
  *
  */
 export type TextBlockSlice = prismicT.SharedSlice<"text_block", TextBlockSliceVariation>;
+/**
+ * Primary content in WufooForm → Primary
+ *
+ */
+interface WufooFormSliceDefaultPrimary {
+    /**
+     * Username field in *WufooForm → Primary*
+     *
+     * - **Field Type**: Text
+     * - **Placeholder**: *None*
+     * - **API ID Path**: wufoo_form.primary.username
+     * - **Documentation**: https://prismic.io/docs/core-concepts/key-text
+     *
+     */
+    username: prismicT.KeyTextField;
+    /**
+     * Form Hash field in *WufooForm → Primary*
+     *
+     * - **Field Type**: Text
+     * - **Placeholder**: *None*
+     * - **API ID Path**: wufoo_form.primary.formhash
+     * - **Documentation**: https://prismic.io/docs/core-concepts/key-text
+     *
+     */
+    formhash: prismicT.KeyTextField;
+}
+/**
+ * Default variation for WufooForm Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: `WufooForm`
+ * - **Documentation**: https://prismic.io/docs/core-concepts/reusing-slices
+ *
+ */
+export type WufooFormSliceDefault = prismicT.SharedSliceVariation<"default", Simplify<WufooFormSliceDefaultPrimary>, never>;
+/**
+ * Slice variation for *WufooForm*
+ *
+ */
+type WufooFormSliceVariation = WufooFormSliceDefault;
+/**
+ * WufooForm Shared Slice
+ *
+ * - **API ID**: `wufoo_form`
+ * - **Description**: `WufooForm`
+ * - **Documentation**: https://prismic.io/docs/core-concepts/reusing-slices
+ *
+ */
+export type WufooFormSlice = prismicT.SharedSlice<"wufoo_form", WufooFormSliceVariation>;
 declare module "@prismicio/client" {
     interface CreateClient {
         (repositoryNameOrEndpoint: string, options?: prismic.ClientConfig): prismic.Client<AllDocumentTypes>;
     }
     namespace Content {
-        export type { HomeDocumentData, HomeDocumentDataSlicesSlice, HomeDocument, PageDocumentData, PageDocumentDataSlicesSlice, PageDocument, SectionDocumentData, SectionDocumentDataSlicesSlice, SectionDocument, SiteDocumentData, SiteDocumentDataMenuItem, SiteDocument, AllDocumentTypes, EmbedBlockSliceDefaultPrimary, EmbedBlockSliceDefaultItem, EmbedBlockSliceDefault, EmbedBlockSliceVariation, EmbedBlockSlice, GallerySliceDefaultPrimary, GallerySliceDefaultItem, GallerySliceDefault, GallerySliceVariation, GallerySlice, MenuSliceDefaultItem, MenuSliceDefault, MenuSliceVariation, MenuSlice, ResourceBlockSliceDefaultPrimary, ResourceBlockSliceDefaultItem, ResourceBlockSliceDefault, ResourceBlockSliceVariation, ResourceBlockSlice, SoundcloudBlockSliceDefaultPrimary, SoundcloudBlockSliceDefaultItem, SoundcloudBlockSliceDefault, SoundcloudBlockSliceVariation, SoundcloudBlockSlice, TestimonialBlockSliceDefaultItem, TestimonialBlockSliceDefault, TestimonialBlockSliceVariation, TestimonialBlockSlice, TextBlockSliceDefaultPrimary, TextBlockSliceDefaultItem, TextBlockSliceDefault, TextBlockSliceVariation, TextBlockSlice };
+        export type { HomeDocumentData, HomeDocumentDataSlicesSlice, HomeDocument, PageDocumentData, PageDocumentDataSlicesSlice, PageDocument, SectionDocumentData, SectionDocumentDataSlicesSlice, SectionDocument, SiteDocumentData, SiteDocumentDataMenuItem, SiteDocument, AllDocumentTypes, EmbedBlockSliceDefaultPrimary, EmbedBlockSliceDefaultItem, EmbedBlockSliceDefault, EmbedBlockSliceVariation, EmbedBlockSlice, GallerySliceDefaultPrimary, GallerySliceDefaultItem, GallerySliceDefault, GallerySliceVariation, GallerySlice, MenuSliceDefaultItem, MenuSliceDefault, MenuSliceVariation, MenuSlice, ResourceBlockSliceDefaultPrimary, ResourceBlockSliceDefaultItem, ResourceBlockSliceDefault, ResourceBlockSliceVariation, ResourceBlockSlice, SoundcloudBlockSliceDefaultPrimary, SoundcloudBlockSliceDefaultItem, SoundcloudBlockSliceDefault, SoundcloudBlockSliceVariation, SoundcloudBlockSlice, TestimonialBlockSliceDefaultItem, TestimonialBlockSliceDefault, TestimonialBlockSliceVariation, TestimonialBlockSlice, TextBlockSliceDefaultPrimary, TextBlockSliceDefaultItem, TextBlockSliceDefault, TextBlockSliceVariation, TextBlockSlice, WufooFormSliceDefaultPrimary, WufooFormSliceDefault, WufooFormSliceVariation, WufooFormSlice };
     }
 }

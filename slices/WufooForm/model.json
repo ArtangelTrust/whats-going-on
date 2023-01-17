@@ -1,0 +1,33 @@
+{
+  "id": "wufoo_form",
+  "type": "SharedSlice",
+  "name": "WufooForm",
+  "description": "WufooForm",
+  "variations": [
+    {
+      "id": "default",
+      "name": "Default",
+      "docURL": "...",
+      "version": "sktwi1xtmkfgx8626",
+      "description": "WufooForm",
+      "primary": {
+        "username": {
+          "type": "Text",
+          "config": {
+            "label": "Username",
+            "placeholder": ""
+          }
+        },
+        "formhash": {
+          "type": "Text",
+          "config": {
+            "label": "Form Hash",
+            "placeholder": ""
+          }
+        }
+      },
+      "items": {},
+      "imageUrl": "https://images.prismic.io/slice-machine/621a5ec4-0387-4bc5-9860-2dd46cbc07cd_default_ss.png?auto=compress,format"
+    }
+  ]
+}

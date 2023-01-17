@@ -70,6 +70,18 @@ const sectionGraphQuery = `{
           }
         }
       }
+      ...on wufoo_form {
+        variation {
+          ...on default {
+            primary {
+              ...primaryFields
+            }
+            items {
+              ...itemsFields
+            }
+          }
+        }
+      }
       ...on gallery {
         variation {
           ...on default {
