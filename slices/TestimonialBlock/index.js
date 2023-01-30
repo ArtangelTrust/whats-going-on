@@ -2,6 +2,8 @@ import React from 'react'
 import { PrismicRichText } from '@prismicio/react'
 import ScrollContainer from 'react-indiana-drag-scroll'
 
+import { useTheme } from 'lib'
+
 import styles from "./index.module.css"
 
 /**
@@ -10,21 +12,36 @@ import styles from "./index.module.css"
  * @param { TestimonialBlockProps }
  */
 
-const TestimonialBlock = ({ slice }) => (
-  <section className={styles['testimonial-block']}>
-    <ScrollContainer className={styles['scroll-container']}>
-      {slice.items.map((item, index) => (
-        <div key={index} className={styles.testimonial}>
-          {item.text &&
-            <PrismicRichText field={item.text}/>
-          }
-          {item.name && 
-            <p className={styles.name}>{item.name}</p>
-          }
+const TestimonialBlock = ({ slice }) => {
+  // Workaround to correct text colour against highlight background
+  const { currentTheme } = useTheme();
+
+  return (
+    <section className={styles['testimonial-block']}>
+      <>
+        <ScrollContainer className={styles['scroll-container']}>
+          {slice.items.map((item, index) => (
+            <div key={index} className={`${styles.testimonial} ${styles[currentTheme]}`}>
+              {item.text &&
+                <PrismicRichText field={item.text}/>
+              }
+              {item.name && 
+                <p className={styles.name}>{item.name}</p>
+              }
+            </div>
+          ))}
+        </ScrollContainer>
+        <div className={styles.buttons}>
+          {slice.items.map((_, index) => (
+            <button 
+              key={index}
+              onClick={() => clickHandler(index)}
+            />
+          ))}
         </div>
-      ))}
-    </ScrollContainer>
-  </section>
-)
+      </>
+    </section>
+  )
+}
 
 export default TestimonialBlock

@@ -3,7 +3,7 @@
 }
 
 .header {
-  @apply flex justify-between items-end px-6 sm:px-12 pt-6 sm:pt-16 mb-12 ;
+  @apply flex justify-between items-end px-6 sm:px-12 pt-12 sm:pt-[3.75rem] mb-12 ;
 }
 
 .header h1 {
@@ -11,13 +11,13 @@
 }
 
 .header button {
-  @apply text-sm px-2 py-1.5 sm:text-base sm:px-3 sm:py-2 md:text-lg md:px-4 md:py-3 border border-dark-grey hover:bg-primary hover:text-secondary focus:bg-primary focus:text-secondary focus:outline-none;
+  @apply w-12 sm:w-16 md:w-24 text-sm py-1.5 sm:text-base sm:py-2 md:text-2xl md:py-3 border border-dark-grey hover:bg-primary hover:text-secondary focus:bg-primary focus:text-secondary focus:outline-none;
 }
 
 .menu-list {
-  @apply px-6 sm:px-12 space-y-3 md:space-y-4 lg:space-y-8 text-3xl md:text-4xl lg:text-6xl;
+  @apply px-6 sm:px-12 md:space-y-4 text-3xl md:text-4xl lg:text-6xl;
 }
 
 .menu-list a {
-  @apply cursor-pointer focus:outline outline-offset-8 outline-primary;
+  @apply cursor-pointer focus:outline outline-offset-8 outline-primary w-full block hover:outline hover:outline-1 pb-4 pt-2;
 }

@@ -3,10 +3,15 @@ import Link from "next/link";
 import { useMenu } from "lib";
 
 import styles from "./Header.module.css";
+import { useState } from "react";
 
 
-export default function Header({title = "“What's Going On?”", breadcrumb = [{title: "Home"}]}) {
+export default function Header({
+  title = "“What's Going On?”", 
+  breadcrumb = [{title: "Home"}]
+}) {
   const { toggleMenu } = useMenu();
+  const [isShown, setIsShown] = useState(false);
   return (
     <header className={styles.header}>
       <div>
@@ -23,7 +28,14 @@ export default function Header({title = "“What's Going On?”", breadcrumb = [
             </li>
           ))}
         </ul>
-        <h1>{title}</h1>
+        <Link href="/">
+          <h1 
+            onMouseEnter={() => setIsShown(true)}
+            onMouseLeave={() => setIsShown(false)}
+          >
+            {isShown ? "“What's Going On?”" : title}
+          </h1>
+        </Link>
       </div>
       <button onClick={toggleMenu}>Menu</button>
     </header>

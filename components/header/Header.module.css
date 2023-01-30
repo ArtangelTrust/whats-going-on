@@ -7,7 +7,7 @@
 }
 
 .header button {
-  @apply text-sm px-2 py-1.5 sm:text-base sm:px-3 sm:py-2 md:text-lg md:px-4 md:py-3 border border-dark-grey hover:bg-primary hover:text-secondary focus:bg-primary focus:text-secondary focus:outline-none;
+  @apply px-2 sm:w-16 md:w-24 text-sm py-1.5 sm:text-base sm:py-2 md:text-2xl md:py-3 border border-dark-grey hover:bg-primary hover:text-secondary focus:bg-primary focus:text-secondary focus:outline-none;
 }
 
 .breadcrumb {

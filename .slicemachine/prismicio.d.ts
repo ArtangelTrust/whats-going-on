@@ -214,6 +214,16 @@ interface EmbedBlockSliceDefaultPrimary {
      *
      */
     collapsible: prismicT.BooleanField;
+    /**
+     * Description field in *EmbedBlock → Primary*
+     *
+     * - **Field Type**: Rich Text
+     * - **Placeholder**: *None*
+     * - **API ID Path**: embed_block.primary.description
+     * - **Documentation**: https://prismic.io/docs/core-concepts/rich-text-title
+     *
+     */
+    description: prismicT.RichTextField;
 }
 /**
  * Item in EmbedBlock → Items

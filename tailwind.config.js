@@ -55,7 +55,7 @@ module.exports = {
             lineHeight: '1.5',
             p: {
               fontSize: '1.5rem',
-              lineHeight: '1.5',
+              lineHeight: '1.35',
               marginTop: '1.3em',
               marginBottom: '1.3em',
             }

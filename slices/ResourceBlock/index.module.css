@@ -3,7 +3,7 @@
 }
 
 .resource-block .description {
-  @apply prose prose-xl mt-2;
+  @apply prose prose-xl mt-2 leading-snug;
 }
 
 .resources {
@@ -11,11 +11,11 @@
 }
 
 .resource-link {
-  @apply flex space-x-4   focus:outline outline-primary outline-offset-8 w-fit;
+  @apply flex space-x-4 focus:outline outline-primary outline-offset-8 w-fit;
 }
 
 .resource-link span {
-  @apply py-2 px-3 text-xs bg-light-grey uppercase inline-block w-12 h-8 font-bold; 
+  @apply py-2 px-3 text-base bg-light-grey uppercase inline-block w-14 h-10 font-bold; 
 }
 
 .resource-title {
@@ -23,5 +23,5 @@
 }
 
 .resource-meta {
-  @apply flex space-x-4 text-sm;
+  @apply flex space-x-4 text-base;
 }

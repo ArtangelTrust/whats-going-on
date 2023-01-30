@@ -3,7 +3,7 @@
 }
 
 .gallery {
-  @apply grid grid-flow-row grid-cols-2 w-full gap-12 pt-6;
+  @apply grid grid-flow-row grid-cols-1 sm:grid-cols-2 w-full gap-12 pt-6;
 }
 
 .gallery figure {
@@ -11,5 +11,5 @@
 }
 
 .gallery-block figure h2 {
-  @apply text-3xl leading-tight mb-4;
+  @apply text-3xl leading-tight;
 }

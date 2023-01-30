@@ -1,5 +1,6 @@
 import React from 'react'
 import Vimeo from '@u-wave/react-vimeo'
+import { PrismicRichText } from '@prismicio/react'
 
 import { Accordion } from 'components'
 
@@ -13,34 +14,41 @@ import styles from "./index.module.css"
 const EmbedBlock = ({ slice }) => (
   <section className={styles['embed-block']}>
     <Accordion collapsible={slice.primary.collapsible} title={slice.primary.title}>
-      <div className={styles['embed-content']}>
-        {slice.items.map((item, index) => {
-          switch (item.embed_link.provider_name) {
-            case "Vimeo":
+      <>
+      {slice.primary.description && (
+        <div className={styles.description}>
+          <PrismicRichText field={slice.primary.description}/>
+        </div>
+      )}
+        <div className={styles['embed-content']}>
+          {slice.items.map((item, index) => {
+            switch (item.embed_link.provider_name) {
+              case "Vimeo":
+                  return (
+                    <Vimeo
+                      key={index}
+                      video={item.embed_link.embed_url}
+                      responsive={true}
+                      dnt={true}
+                      autoplay={true}
+                      muted={true}
+                      style={{height: "80%"}}
+                    />
+                  )
+              default:
                 return (
-                  <Vimeo
+                  <div
                     key={index}
-                    video={item.embed_link.embed_url}
-                    responsive={true}
-                    dnt={true}
-                    autoplay={true}
-                    muted={true}
-                    style={{height: "80%"}}
+                    data-oembed={item.embed_link.embed_url}
+                    data-oembed-type={item.embed_link.type}
+                    data-oembed-provider={item.embed_link.provider_name}
+                    dangerouslySetInnerHTML={{ __html: item.embed_link.html ?? '' }}
                   />
                 )
-            default:
-              return (
-                <div
-                  key={index}
-                  data-oembed={item.embed_link.embed_url}
-                  data-oembed-type={item.embed_link.type}
-                  data-oembed-provider={item.embed_link.provider_name}
-                  dangerouslySetInnerHTML={{ __html: item.embed_link.html ?? '' }}
-                />
-              )
-          }
-        })}
-      </div>
+            }
+          })}
+        </div>
+      </>
     </Accordion>
   </section>
 )

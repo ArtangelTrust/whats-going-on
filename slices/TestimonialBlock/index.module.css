@@ -1,5 +1,5 @@
-.text-block {
-  @apply prose w-screen;
+.testimonial-block {
+  @apply pb-10 pt-4;
 }
 
 .scroll-container {
@@ -7,9 +7,25 @@
 }
 
 .testimonial {
-  @apply shadow-flat shadow-highlight prose prose-xl py-5 px-10 min-w-[600px];
+  @apply  prose prose-2xl leading-none py-5 px-10 min-w-[600px] bg-highlight;
 }
 
 .name {
   @apply text-base;
+}
+
+.theme-dark {
+  @apply text-secondary;
+}
+
+.theme-greyscale {
+  @apply text-secondary;
+}
+
+.buttons {
+  @apply flex justify-center space-x-4 mt-4;
+}
+
+.buttons button {
+  @apply w-3 h-3 bg-highlight rounded-full;
 }
