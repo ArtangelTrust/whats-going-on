@@ -1,9 +1,6 @@
-import React, { useRef } from 'react'
-import { PrismicRichText } from '@prismicio/react'
+import React, { useEffect } from "react";
 
-import Wufoo from './WufooForm'
-
-import styles from "./index.module.css"
+import styles from "./index.module.css";
 
 /**
  * @typedef {import("@prismicio/client").Content.WufooFormSlice} WufooFormSlice
@@ -12,17 +9,15 @@ import styles from "./index.module.css"
  */
 
 const WufooFormBlock = ({ slice }) => {
-
   return (
-    <section className={styles['wufoo-form']}>
-      <Wufoo
-        userName={slice.primary.username}
-        formHash={slice.primary.formhash}
-        className={styles['form']}
-        header="hide"
-      />
-    </section>
-  )
-}
+    slice.primary?.embed_code[0]?.text && (
+      <section className={styles["wufoo-form"]}>
+        <div
+          dangerouslySetInnerHTML={{ __html: slice.primary.embed_code[0].text }}
+        />
+      </section>
+    )
+  );
+};
 
-export default WufooFormBlock
+export default WufooFormBlock;

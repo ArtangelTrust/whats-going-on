@@ -2,7 +2,6 @@
 @tailwind components;
 @tailwind utilities;
 
-
 @layer base {
   @font-face {
     font-family: "Fold Grotesque";
@@ -30,9 +29,9 @@
   :root {
     --white: #ffffff;
     --black: #010203;
-    --blue: #2A4194;
-    --yellow: #FFDF6A;
-    --light-grey: #ECEAE5;
+    --blue: #2a4194;
+    --yellow: #ffdf6a;
+    --light-grey: #eceae5;
     --dark-grey: #717070;
 
     /* Defaults */
@@ -48,7 +47,7 @@
     --color-highlight: var(--yellow);
     --color-active: var(--blue);
   }
-  
+
   .theme-greyscale {
     --color-primary: var(--black);
     --color-secondary: var(--light-grey);

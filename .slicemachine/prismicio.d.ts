@@ -702,25 +702,15 @@ export type TextBlockSlice = prismicT.SharedSlice<"text_block", TextBlockSliceVa
  */
 interface WufooFormSliceDefaultPrimary {
     /**
-     * Username field in *WufooForm → Primary*
+     * Embed Code field in *WufooForm → Primary*
      *
-     * - **Field Type**: Text
+     * - **Field Type**: Rich Text
      * - **Placeholder**: *None*
-     * - **API ID Path**: wufoo_form.primary.username
-     * - **Documentation**: https://prismic.io/docs/core-concepts/key-text
+     * - **API ID Path**: wufoo_form.primary.embed_code
+     * - **Documentation**: https://prismic.io/docs/core-concepts/rich-text-title
      *
      */
-    username: prismicT.KeyTextField;
-    /**
-     * Form Hash field in *WufooForm → Primary*
-     *
-     * - **Field Type**: Text
-     * - **Placeholder**: *None*
-     * - **API ID Path**: wufoo_form.primary.formhash
-     * - **Documentation**: https://prismic.io/docs/core-concepts/key-text
-     *
-     */
-    formhash: prismicT.KeyTextField;
+    embed_code: prismicT.RichTextField;
 }
 /**
  * Default variation for WufooForm Slice

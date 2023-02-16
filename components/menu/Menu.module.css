@@ -3,7 +3,7 @@
 }
 
 .header {
-  @apply flex justify-between items-end px-6 sm:px-12 pt-12 sm:pt-[3.75rem] mb-12 ;
+  @apply flex justify-between items-end px-6 sm:px-12 pt-12 sm:pt-[3.75rem] mb-12;
 }
 
 .header h1 {
@@ -15,9 +15,9 @@
 }
 
 .menu-list {
-  @apply px-6 sm:px-12 md:space-y-4 text-3xl md:text-4xl lg:text-6xl;
+  @apply text-3xl md:text-4xl lg:text-6xl divide-y border-y;
 }
 
 .menu-list a {
-  @apply cursor-pointer focus:outline outline-offset-8 outline-primary w-full block hover:outline hover:outline-1 pb-4 pt-2;
+  @apply cursor-pointer w-full block hover:bg-primary hover:text-secondary pb-6 pt-4 px-6 sm:px-12;
 }

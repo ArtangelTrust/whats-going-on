@@ -11,18 +11,13 @@
       "version": "sktwi1xtmkfgx8626",
       "description": "WufooForm",
       "primary": {
-        "username": {
-          "type": "Text",
+        "embed_code": {
+          "type": "StructuredText",
           "config": {
-            "label": "Username",
-            "placeholder": ""
-          }
-        },
-        "formhash": {
-          "type": "Text",
-          "config": {
-            "label": "Form Hash",
-            "placeholder": ""
+            "label": "Embed Code",
+            "placeholder": "",
+            "allowTargetBlank": true,
+            "single": "preformatted"
           }
         }
       },

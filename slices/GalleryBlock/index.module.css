@@ -11,5 +11,5 @@
 }
 
 .gallery-block figure h2 {
-  @apply text-3xl leading-tight;
+  @apply text-3xl leading-tight mb-1;
 }
