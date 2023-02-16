@@ -7,7 +7,7 @@
 }
 
 .testimonial {
-  @apply  prose prose-2xl leading-none py-5 px-10 min-w-[600px] bg-highlight;
+  @apply prose prose-2xl leading-none py-5 px-10 min-w-[600px] bg-highlight;
 }
 
 .name {
@@ -27,5 +27,5 @@
 }
 
 .buttons button {
-  @apply w-3 h-3 bg-highlight rounded-full;
+  @apply w-3 h-3 bg-highlight rounded-full hover:bg-primary transition-colors;
 }
