@@ -129,17 +129,6 @@ export type SectionDocument<Lang extends string = string> = prismicT.PrismicDocu
 /** Content for Site documents */
 interface SiteDocumentData {
     /**
-     * Site Description field in *Site*
-     *
-     * - **Field Type**: Rich Text
-     * - **Placeholder**: *None*
-     * - **API ID Path**: site.site_description
-     * - **Tab**: Main
-     * - **Documentation**: https://prismic.io/docs/core-concepts/rich-text-title
-     *
-     */
-    site_description: prismicT.RichTextField;
-    /**
      * Menu field in *Site*
      *
      * - **Field Type**: Group

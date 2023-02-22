@@ -14,9 +14,9 @@ export default function BaseLayout({ children }) {
         <title>What&apos;s Going On?</title>
         <meta
           name="description"
-          content="What&apos;s Going On?"
+          content="Five films exploring the experience of psychosis are available to stream for free as an educational resource in judicial, medical and psychiatric settings."
         />
-        <link rel="icon" href="/favicon.ico" />
+        <link rel="icon" href="/favicon.png" />
       </Head>
       <a className={styles['skip-navigation-link']} href="#main-content">
         Skip Navigation

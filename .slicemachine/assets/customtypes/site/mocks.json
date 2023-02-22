@@ -1,15 +1,4 @@
 {
-  "site_description": {
-    "__TYPE__": "StructuredTextContent",
-    "value": [
-      {
-        "type": "paragraph",
-        "content": {
-          "text": "Aliquip enim duis Lorem proident nisi non sit eiusmod in consectetur. In ullamco mollit eiusmod fugiat."
-        }
-      }
-    ]
-  },
   "menu": {
     "__TYPE__": "GroupContentType",
     "value": [
@@ -30,7 +19,7 @@
             "title",
             {
               "__TYPE__": "FieldContent",
-              "value": "result",
+              "value": "trail",
               "type": "Text"
             }
           ]
