@@ -58,6 +58,18 @@ const sectionGraphQuery = `{
           }
         }
       }
+      ...on embed_block {
+        variation {
+          ...on default {
+            primary {
+              ...primaryFields
+            }
+            items {
+              ...itemsFields
+            }
+          }
+        }
+      }
       ...on resource_block {
         variation {
           ...on default {

@@ -26,8 +26,6 @@ const TestimonialBlock = ({ slice }) => {
     });
   };
 
-  console.log(elementsRef);
-
   return (
     <section className={styles["testimonial-block"]}>
       <>

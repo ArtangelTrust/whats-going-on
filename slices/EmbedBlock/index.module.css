@@ -7,9 +7,9 @@
 }
 
 .embed-content [data-oembed-provider="SoundCloud"] iframe {
-  @apply h-52
+  @apply h-52 mb-4;
 }
 
 .description {
-  @apply px-6 pt-6 text-lg
+  @apply px-6 pt-6 text-lg;
 }
