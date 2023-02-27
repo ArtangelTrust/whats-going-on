@@ -37,6 +37,15 @@ export default function Footer() {
           For individuals wanting to access the films, please email{" "}
           <a href="mailto:info@artangel.org.uk">info@artangel.org.uk</a>
         </p>
+        <p>
+          <a 
+            href="https://www.artangel.org.uk/privacy-policy/#websites"
+            target="_blank"
+            rel="noreferrer"
+          >
+            Privacy Policy
+          </a>
+        </p>
       </div>
     </footer>
   );

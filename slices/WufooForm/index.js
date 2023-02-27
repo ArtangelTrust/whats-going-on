@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 
 import styles from "./index.module.css";
 
@@ -9,6 +9,7 @@ import styles from "./index.module.css";
  */
 
 const WufooFormBlock = ({ slice }) => {
+
   return (
     slice.primary?.embed_code[0]?.text && (
       <section className={styles["wufoo-form"]}>

@@ -27,7 +27,7 @@ export default function Accordion({
       >
         <div className={`${styles.summary} ${styles[currentTheme]}`}>
           <ArrowRight
-            className={`transition-transform w-8 h-8 ${open && "rotate-90"}`}
+            className={`transition-transform min-w-[2rem] w-8 h-8 ${open && "rotate-90"}`}
           />
           <p>{title}</p>
         </div>

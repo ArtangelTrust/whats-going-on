@@ -4,6 +4,7 @@ import { useMenu, useTheme } from "lib";
 import { AccessibilityPanel, Footer, Menu } from "components";
 
 import styles from "./BaseLayout.module.css";
+import CookieConsent from "react-cookie-consent";
 
 export default function BaseLayout({ children }) {
   const { showMenu } =  useMenu();
@@ -33,6 +34,19 @@ export default function BaseLayout({ children }) {
         )
       }
       <AccessibilityPanel />
+      <CookieConsent 
+        disableStyles
+        enableDeclineButton
+        declineButtonText="Read More"
+        onDecline={() => {
+          window.location.href = "https://www.artangel.org.uk/privacy-policy/#websites"
+        }}
+        containerClasses="py-4 space-y-4 md:space-y-0 px-4 bottom-0 items-baseline bg-black text-white flex flex-wrap justify-between left-0 fixed w-full z-[999]"
+        buttonClasses="bg-highlight rounded-none shadow-none text-black cursor-pointer md:mx-4 px-2 py-1"
+        declineButtonClasses="bg-white text-black rounded-none shadow-none cursor-pointer mr-4 md:mx-4 px-2 py-1"
+      >
+        This website uses cookies to enhance the user experience.
+      </CookieConsent>
       <Footer />
     </div>
   );

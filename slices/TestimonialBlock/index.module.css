@@ -7,7 +7,7 @@
 }
 
 .testimonial {
-  @apply prose prose-2xl leading-none py-5 px-10 min-w-[600px] bg-highlight;
+  @apply prose prose-xl md:prose-2xl leading-none py-5 px-10 min-w-fit md:min-w-[600px] bg-highlight;
 }
 
 .name {
