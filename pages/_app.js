@@ -27,17 +27,20 @@ export default function App({ Component, pageProps }) {
           </MenuProvider>
         </PrismicPreview>
       </PrismicProvider>
-      <Script 
+      <Script
+        id="google-tag-manager" 
         async
         src="https://www.googletagmanager.com/gtag/js?id=G-V64Z5SPNX7"
         strategy="afterInteractive" 
       />
-      <Script strategy="afterInteractive">
+      <Script 
+        id="gtag-config" 
+        strategy="afterInteractive"
+      >
         {`
           window.dataLayer = window.dataLayer || [];
           function gtag(){dataLayer.push(arguments);}
           gtag('js', new Date());
-        
           gtag('config', 'G-V64Z5SPNX7');
         `}
       </Script>
