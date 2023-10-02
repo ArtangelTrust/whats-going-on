@@ -3,5 +3,5 @@
 }
 
 .text {
-  @apply prose-xl sm:prose-2xl prose max-w-prose;
+  @apply prose-xl sm:prose-2xl max-w-prose;
 }

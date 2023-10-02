@@ -58,6 +58,13 @@ module.exports = {
               lineHeight: '1.275',
               marginTop: '1.2em',
               marginBottom: '1.2em',
+            },
+            h1: {
+              fontWeight: '400',
+              fontSize: '1.8rem',
+              lineHeight: '1.275',
+              marginTop: '1.2em',
+              marginBottom: '1.2em',
             }
           }
         },
@@ -67,6 +74,13 @@ module.exports = {
             lineHeight: '1.5',
             p: {
               fontSize: '1.5rem',
+              lineHeight: '1.35',
+              marginTop: '1.3em',
+              marginBottom: '1.3em',
+            },
+            h1: {
+              fontWeight: '400',
+              fontSize: '2.1rem',
               lineHeight: '1.35',
               marginTop: '1.3em',
               marginBottom: '1.3em',

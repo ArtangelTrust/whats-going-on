@@ -18,7 +18,7 @@
             "label": "Testimonial Text",
             "placeholder": "",
             "allowTargetBlank": true,
-            "single": "paragraph,strong,em"
+            "single": "paragraph,strong,em,hyperlink"
           }
         },
         "name": {
