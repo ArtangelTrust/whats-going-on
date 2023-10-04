@@ -24,9 +24,15 @@
           [
             "name",
             {
-              "__TYPE__": "FieldContent",
-              "value": "gas",
-              "type": "Text"
+              "__TYPE__": "StructuredTextContent",
+              "value": [
+                {
+                  "type": "paragraph",
+                  "content": {
+                    "text": "Ea magna id mollit consequat consectetur ut sint pariatur magna nostrud. Aliqua in aliquip cupidatat nostrud in tempor qui sit cupidatat nostrud enim. Qui incididunt est laboris occaecat."
+                  }
+                }
+              ]
             }
           ]
         ]

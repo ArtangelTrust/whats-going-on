@@ -37,7 +37,7 @@ const TestimonialBlock = ({ slice }) => {
               ref={elementsRef.current[index]}
             >
               {item.text && <PrismicRichText field={item.text} />}
-              {item.name && <p className={styles.name}>{item.name}</p>}
+              {item.name && <div className={styles.name}><PrismicRichText field={item.name} /></div>}
             </div>
           ))}
         </ScrollContainer>

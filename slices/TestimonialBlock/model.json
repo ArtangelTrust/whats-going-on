@@ -22,10 +22,12 @@
           }
         },
         "name": {
-          "type": "Text",
+          "type": "StructuredText",
           "config": {
             "label": "Testimonial Author",
-            "placeholder": ""
+            "placeholder": "",
+            "allowTargetBlank": true,
+            "multi": "paragraph,hyperlink"
           }
         }
       },

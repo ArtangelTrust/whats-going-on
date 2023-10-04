@@ -588,13 +588,13 @@ export interface TestimonialBlockSliceDefaultItem {
     /**
      * Testimonial Author field in *TestimonialBlock → Items*
      *
-     * - **Field Type**: Text
+     * - **Field Type**: Rich Text
      * - **Placeholder**: *None*
      * - **API ID Path**: testimonial_block.items[].name
-     * - **Documentation**: https://prismic.io/docs/core-concepts/key-text
+     * - **Documentation**: https://prismic.io/docs/core-concepts/rich-text-title
      *
      */
-    name: prismicT.KeyTextField;
+    name: prismicT.RichTextField;
 }
 /**
  * Default variation for TestimonialBlock Slice
