@@ -22,10 +22,12 @@ export default function Accordion({
         className={cn(styles.details, { "pb-8": open })}
         open={defaultOpen}
         onKeyDown={handleKey}
-        onClick={() => setOpen((o) => !o)}
         tabIndex="0"
       >
-        <div className={`${styles.summary} ${styles[currentTheme]}`}>
+        <div
+          onClick={() => setOpen((o) => !o)}
+          className={`${styles.summary} ${styles[currentTheme]}`}
+        >
           <ArrowRight
             className={`transition-transform min-w-[2rem] w-8 h-8 ${open && "rotate-90"}`}
           />

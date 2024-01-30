@@ -2,8 +2,9 @@ import Link from "next/link";
 import Script from "next/script";
 import { PrismicProvider } from "@prismicio/react";
 import { PrismicPreview } from "@prismicio/next";
-
+import { CookiesProvider } from "react-cookie";
 import { linkResolver, repositoryName } from "prismicio";
+
 import { MenuProvider, ThemeProvider } from 'lib';
 import '../styles/globals.css'
 
@@ -20,11 +21,13 @@ export default function App({ Component, pageProps }) {
         )}
       >
         <PrismicPreview repositoryName={repositoryName}>
-          <MenuProvider>
-            <ThemeProvider>
-              {getLayout(<Component {...pageProps} />)}
-            </ThemeProvider>
-          </MenuProvider>
+          <CookiesProvider defaultSetOptions={{ path: '/' }}>
+            <MenuProvider>
+              <ThemeProvider>
+                {getLayout(<Component {...pageProps} />)}
+              </ThemeProvider>
+            </MenuProvider>
+          </CookiesProvider>
         </PrismicPreview>
       </PrismicProvider>
       <Script

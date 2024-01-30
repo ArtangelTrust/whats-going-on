@@ -15,6 +15,7 @@ export { default as Footer } from "components/footer/Footer.js";
 
 // SVGs
 export { default as ArrowRight } from "components/svg/ArrowRight.js";
+export { default as LocationMarker } from "components/svg/LocationMarker.js";
 
 // Accordion
 export { default as Accordion } from "components/accordion/Accordion.js";

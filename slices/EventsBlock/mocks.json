@@ -1,0 +1,132 @@
+[
+	{
+		"__TYPE__": "SharedSliceContent",
+		"variation": "default",
+		"primary": {
+			"title": {
+				"__TYPE__": "FieldContent",
+				"value": "cookies",
+				"type": "Text"
+			}
+		},
+		"items": [
+			{
+				"__TYPE__": "GroupItemContent",
+				"value": [
+					[
+						"location",
+						{
+							"__TYPE__": "FieldContent",
+							"type": "Text",
+							"value": "Location"
+						}
+					],
+					[
+						"tickets_link",
+						{
+							"__TYPE__": "LinkContent",
+							"value": {
+								"__TYPE__": "ExternalLink",
+								"url": "https://prismic.io",
+								"target": "_blank"
+							}
+						}
+					],
+					[
+						"date",
+						{
+							"__TYPE__": "FieldContent",
+							"type": "Text",
+							"value": "2 Jan 1984"
+						}
+					],
+					[
+						"title",
+						{
+							"__TYPE__": "FieldContent",
+							"type": "Text",
+							"value": "TITLE"
+						}
+					],
+					[
+						"description",
+						{
+							"__TYPE__": "FieldContent",
+							"type": "Text",
+							"value": "Description"
+						}
+					],
+					[
+						"information",
+						{
+							"__TYPE__": "StructuredTextContent",
+							"value": [
+								{
+									"type": "paragraph",
+									"content": {
+										"text": "Some information",
+										"spans": []
+									},
+									"direction": "ltr"
+								}
+							]
+						}
+					]
+				]
+			},
+			{
+				"__TYPE__": "GroupItemContent",
+				"value": [
+					[
+						"date",
+						{
+							"__TYPE__": "FieldContent",
+							"type": "Text",
+							"value": "8 February 2003"
+						}
+					],
+					[
+						"title",
+						{
+							"__TYPE__": "FieldContent",
+							"type": "Text",
+							"value": "TITLE"
+						}
+					],
+					[
+						"location",
+						{
+							"__TYPE__": "FieldContent",
+							"type": "Text",
+							"value": "Location"
+						}
+					],
+					[
+						"description",
+						{
+							"__TYPE__": "FieldContent",
+							"type": "Text",
+							"value": "Description"
+						}
+					],
+					[
+						"information",
+						{
+							"__TYPE__": "StructuredTextContent",
+							"value": [
+								{
+									"type": "paragraph",
+									"content": {
+										"text": "This entry has information but not ticket link, therefore 'more info' appears.",
+										"spans": []
+									},
+									"direction": "ltr"
+								}
+							]
+						}
+					]
+				]
+			}
+		]
+	}
+]

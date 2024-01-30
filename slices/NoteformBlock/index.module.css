@@ -1,0 +1,3 @@
+.noteform-block {
+  @apply prose-2xl prose max-w-none md:w-4/5 lg:w-3/5 px-6 sm:px-12 font-sans;
+}

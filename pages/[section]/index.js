@@ -1,5 +1,3 @@
-import Head from 'next/head'
-import Image from 'next/image'
 import { SliceZone } from "@prismicio/react";
 import * as prismicH from "@prismicio/helpers";
 
@@ -83,6 +81,18 @@ const sectionGraphQuery = `{
         }
       }
       ...on wufoo_form {
+        variation {
+          ...on default {
+            primary {
+              ...primaryFields
+            }
+            items {
+              ...itemsFields
+            }
+          }
+        }
+      }
+      ...on noteform_block {
         variation {
           ...on default {
             primary {

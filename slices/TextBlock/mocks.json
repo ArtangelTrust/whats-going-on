@@ -1,38 +1,38 @@
 [
-  {
-    "__TYPE__": "SharedSliceContent",
-    "variation": "default",
-    "primary": {
-      "title": {
-        "__TYPE__": "FieldContent",
-        "value": "large",
-        "type": "Text"
-      },
-      "collapsible": {
-        "__TYPE__": "BooleanContent",
-        "value": true
-      }
-    },
-    "items": [
-      {
-        "__TYPE__": "GroupItemContent",
-        "value": [
-          [
-            "text",
-            {
-              "__TYPE__": "StructuredTextContent",
-              "value": [
-                {
-                  "type": "paragraph",
-                  "content": {
-                    "text": "Labore non nisi fugiat elit adipisicing irure cupidatat labore est. Esse culpa non velit amet sint dolor cupidatat."
-                  }
-                }
-              ]
-            }
-          ]
-        ]
-      }
-    ]
-  }
+	{
+		"__TYPE__": "SharedSliceContent",
+		"variation": "default",
+		"primary": {
+			"title": {
+				"__TYPE__": "FieldContent",
+				"value": "large",
+				"type": "Text"
+			},
+			"collapsible": {
+				"__TYPE__": "BooleanContent",
+				"value": true
+			}
+		},
+		"items": [
+			{
+				"__TYPE__": "GroupItemContent",
+				"value": [
+					[
+						"text",
+						{
+							"__TYPE__": "StructuredTextContent",
+							"value": [
+								{
+									"type": "paragraph",
+									"content": {
+										"text": "Labore non nisi fugiat elit adipisicing irure cupidatat labore est. Esse culpa non velit amet sint dolor cupidatat."
+									}
+								}
+							]
+						}
+					]
+				]
+			}
+		]
+	}
 ]

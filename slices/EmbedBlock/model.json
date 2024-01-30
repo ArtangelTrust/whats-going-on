@@ -35,6 +35,15 @@
             "allowTargetBlank": true,
             "multi": "paragraph,strong,em"
           }
+        },
+        "protected": {
+          "type": "Boolean",
+          "config": {
+            "label": "Protected",
+            "default_value": false,
+            "placeholder_true": "true",
+            "placeholder_false": "false"
+          }
         }
       },
       "items": {

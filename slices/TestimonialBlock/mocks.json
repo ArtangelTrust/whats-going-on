@@ -1,42 +1,42 @@
 [
-  {
-    "__TYPE__": "SharedSliceContent",
-    "variation": "default",
-    "primary": {},
-    "items": [
-      {
-        "__TYPE__": "GroupItemContent",
-        "value": [
-          [
-            "text",
-            {
-              "__TYPE__": "StructuredTextContent",
-              "value": [
-                {
-                  "type": "paragraph",
-                  "content": {
-                    "text": "Adipisicing qui labore nisi cupidatat. Consectetur esse excepteur culpa Lorem est irure sunt pariatur irure non cillum esse nisi voluptate adipisicing. Et ex pariatur amet consequat et esse elit consequat excepteur non officia nostrud anim ex."
-                  }
-                }
-              ]
-            }
-          ],
-          [
-            "name",
-            {
-              "__TYPE__": "StructuredTextContent",
-              "value": [
-                {
-                  "type": "paragraph",
-                  "content": {
-                    "text": "Ea magna id mollit consequat consectetur ut sint pariatur magna nostrud. Aliqua in aliquip cupidatat nostrud in tempor qui sit cupidatat nostrud enim. Qui incididunt est laboris occaecat."
-                  }
-                }
-              ]
-            }
-          ]
-        ]
-      }
-    ]
-  }
+	{
+		"__TYPE__": "SharedSliceContent",
+		"variation": "default",
+		"primary": {},
+		"items": [
+			{
+				"__TYPE__": "GroupItemContent",
+				"value": [
+					[
+						"text",
+						{
+							"__TYPE__": "StructuredTextContent",
+							"value": [
+								{
+									"type": "paragraph",
+									"content": {
+										"text": "Adipisicing qui labore nisi cupidatat. Consectetur esse excepteur culpa Lorem est irure sunt pariatur irure non cillum esse nisi voluptate adipisicing. Et ex pariatur amet consequat et esse elit consequat excepteur non officia nostrud anim ex."
+									}
+								}
+							]
+						}
+					],
+					[
+						"name",
+						{
+							"__TYPE__": "StructuredTextContent",
+							"value": [
+								{
+									"type": "paragraph",
+									"content": {
+										"text": "Ea magna id mollit consequat consectetur ut sint pariatur magna nostrud. Aliqua in aliquip cupidatat nostrud in tempor qui sit cupidatat nostrud enim. Qui incididunt est laboris occaecat."
+									}
+								}
+							]
+						}
+					]
+				]
+			}
+		]
+	}
 ]

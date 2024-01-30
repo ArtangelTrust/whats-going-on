@@ -52,6 +52,18 @@ const homeGraphQuery = `{
           }
         }
       }
+      ...on events_block {
+        variation {
+          ...on default {
+            primary {
+              ...primaryFields
+            }
+            items {
+              ...itemsFields
+            }
+          }
+        }
+      }
       ...on gallery {
         variation {
           ...on default {

@@ -3,6 +3,7 @@
   "label": "Home",
   "repeatable": false,
   "status": true,
+  "format": "page",
   "json": {
     "Main": {
       "slices": {
@@ -10,6 +11,9 @@
         "fieldset": "Slice Zone",
         "config": {
           "choices": {
+            "events_block": {
+              "type": "SharedSlice"
+            },
             "testimonial_block": {
               "type": "SharedSlice"
             },

@@ -1,0 +1,28 @@
+{
+  "id": "noteform_block",
+  "type": "SharedSlice",
+  "name": "NoteformBlock",
+  "description": "NoteformBlock",
+  "variations": [
+    {
+      "id": "default",
+      "name": "Default",
+      "docURL": "...",
+      "version": "initial",
+      "description": "Default",
+      "imageUrl": "",
+      "primary": {
+        "noteform_link": {
+          "type": "Link",
+          "config": {
+            "label": "NoteForm Link",
+            "placeholder": "",
+            "allowTargetBlank": false,
+            "select": null
+          }
+        }
+      },
+      "items": {}
+    }
+  ]
+}

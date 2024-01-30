@@ -13,3 +13,7 @@
 .description {
   @apply px-6 pt-6 text-lg;
 }
+
+.description a {
+  @apply underline
+}
