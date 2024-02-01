@@ -15,7 +15,7 @@ const NoteformBlock = ({ slice }) => {
         return
       }
       setCookie('wgo_access', true);
-      router.push("/")
+      router.push("/watch-the-films")
     }
     window.addEventListener('message', handleMessage);
     return () => {
