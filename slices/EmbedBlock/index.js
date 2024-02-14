@@ -47,6 +47,7 @@ const EmbedBlock = ({ slice }) => {
                           dnt={true}
                           autoplay={true}
                           muted={true}
+                          textTrack="en-uk"
                           style={{height: "80%"}}
                         />
                       )

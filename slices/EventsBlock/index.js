@@ -69,39 +69,43 @@ const EventsBlock = ({ slice }) => {
             key={index}
             className={`${styles["event-item"]} ${styles[currentTheme]}`}
           >
-            {item.date && (
-              <p className="text-lg">{item.date}</p>
-            )}
-            {item.title && (
-              <p className="text-4xl mt-4 mb-6">{item.title}</p>
-            )}
-            {item.location && (
-              <p className="space-x-2 flex items-baseline text-lg">
-                <LocationMarker className="h-4 w-auto inline-block" />
-                <span>{item.location}</span>
-              </p>
-            )}
-            {item.description && (
-              <p className="space-x-2 flex items-baseline text-lg">
-                <ArrowRight className="w-4 h-auto inline-block" />
-                <span>{item.description}</span>
-              </p>
-            )}
-            {item.tickets_link.url ? (
-              <PrismicLink
-                field={item.tickets_link}
-                className="bg-primary inline-block text-secondary px-2 py-1 text-lg mt-3 hover:bg-secondary hover:text-primary"
-              >
-                Book Tickets
-              </PrismicLink>
-            ) : (
-              <button
-                className="bg-primary text-secondary px-2 py-1 text-lg mt-3 hover:bg-secondary hover:text-primary"
-                onClick={() => setSelectedEvent(item)}
-              >
-                More Info
-              </button>
-            )}
+            <div>
+              {item.date && (
+                <p className="text-lg">{item.date}</p>
+              )}
+              {item.title && (
+                <p className="text-4xl mt-4 mb-6 font-display">{item.title}</p>
+              )}
+              {item.location && (
+                <p className="space-x-3 flex items-baseline text-lg">
+                  <LocationMarker className="h-4 w-4 inline-block" />
+                  <span>{item.location}</span>
+                </p>
+              )}
+              {item.description && (
+                <p className="space-x-3 flex items-baseline text-lg">
+                  <ArrowRight className="w-4 h-auto inline-block" />
+                  <span>{item.description}</span>
+                </p>
+              )}
+            </div>
+            <div>
+              {item.tickets_link.url ? (
+                <PrismicLink
+                  field={item.tickets_link}
+                  className="bg-primary inline-block text-secondary px-2 py-1 text-lg mt-3 hover:bg-secondary hover:text-primary"
+                >
+                  Book Tickets
+                </PrismicLink>
+              ) : (
+                <button
+                  className="bg-primary text-secondary px-2 py-1 text-lg mt-3 hover:bg-secondary hover:text-primary"
+                  onClick={() => setSelectedEvent(item)}
+                >
+                  More Info
+                </button>
+              )}
+            </div>
           </div>
         ))}
       </div>

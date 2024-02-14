@@ -3,7 +3,7 @@
 }
 
 .events-title p {
-  @apply text-4xl font-bold;
+  @apply text-3xl font-sans;
 }
 
 .events-block {
@@ -11,7 +11,7 @@
 }
 
 .event-item {
-  @apply bg-highlight w-full p-4;
+  @apply bg-highlight w-full p-4 flex flex-col justify-between;
 }
 
 .theme-dark {
