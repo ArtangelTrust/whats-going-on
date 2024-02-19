@@ -14,7 +14,7 @@ import { useTheme } from 'lib';
 
 const ModalBox = ({children, hide}) => {
   return (
-    <div className="w-screen h-screen fixed top-0 left-0 z-10 flex items-center justify-center pointer-events-none">
+    <div className={styles['event-modal']}>
       <div className="border m-6 sm:m-0 sm:w-4/5 md:w-3/5 lg:w-2/5 min-h-[120px] p-8 bg-secondary relative pointer-events-auto">
         <div className="absolute right-4 top-4">
           <button onClick={() => hide()}>✕</button>
@@ -41,8 +41,8 @@ const EventsBlock = ({ slice }) => {
             <p className="text-4xl mt-4 mb-6">{selectedEvent.title}</p>
           )}
           {selectedEvent.location && (
-            <p className="space-x-2 flex selectedEvents-baseline text-lg">
-              <LocationMarker className="h-4 w-auto inline-block" />
+            <p className="space-x-2 flex items-baseline text-lg">
+              <LocationMarker className="h-4 w-4 inline-block" />
               <span>{selectedEvent.location}</span>
             </p>
           )}

@@ -21,3 +21,11 @@
 .theme-greyscale {
   @apply text-secondary;
 }
+
+.event-modal {
+  @apply w-screen h-screen fixed top-0 left-0 z-10 flex items-center justify-center pointer-events-none
+}
+
+.event-modal a {
+  @apply text-blue
+}
