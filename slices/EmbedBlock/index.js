@@ -45,7 +45,7 @@ const EmbedBlock = ({ slice }) => {
                           video={item.embed_link.embed_url}
                           responsive={true}
                           dnt={true}
-                          autoplay={true}
+                          autoplay={false}
                           muted={true}
                           textTrack="en-GB"
                           style={{height: "80%"}}
