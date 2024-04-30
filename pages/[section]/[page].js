@@ -78,6 +78,18 @@ const pageGraphQuery = `{
           }
         }
       }
+      ...on resource_block {
+        variation {
+          ...on default {
+            primary {
+              ...primaryFields
+            }
+            items {
+              ...itemsFields
+            }
+          }
+        }
+      }
       ...on gallery {
         variation {
           ...on default {

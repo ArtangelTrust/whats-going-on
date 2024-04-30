@@ -43,6 +43,7 @@ export type HomeDocument<Lang extends string = string> =
   prismic.PrismicDocumentWithoutUID<Simplify<HomeDocumentData>, "home", Lang>;
 
 type PageDocumentDataSlicesSlice =
+  | ResourceBlockSlice
   | TextBlockSlice
   | GallerySlice
   | MenuSlice

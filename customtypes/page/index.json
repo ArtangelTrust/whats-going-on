@@ -3,6 +3,7 @@
   "label": "Subpage",
   "repeatable": true,
   "status": true,
+  "format": "custom",
   "json": {
     "Main": {
       "title": {
@@ -24,9 +25,7 @@
         "config": {
           "label": "Section",
           "select": "document",
-          "customtypes": [
-            "section"
-          ]
+          "customtypes": ["section"]
         }
       },
       "slices": {
@@ -34,6 +33,9 @@
         "fieldset": "Slice Zone",
         "config": {
           "choices": {
+            "resource_block": {
+              "type": "SharedSlice"
+            },
             "text_block": {
               "type": "SharedSlice"
             },
